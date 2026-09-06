@@ -1,11 +1,13 @@
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
 import { GabrielPhoto } from "@/app/_components/shared/gabriel-photo";
+import { HeroBackground } from "@/app/_components/shared/hero-background";
 import { WhatsappButton } from "@/app/_components/shared/whatsapp-button";
 import { CITIES, PSYCHOLOGIST } from "@/app/_lib/constants";
 
 export function HeroSection() {
   return (
-    <section className="bg-secondary">
+    <section className="relative isolate overflow-hidden bg-secondary">
+      <HeroBackground />
       <div className="mx-auto flex max-w-6xl flex-col-reverse items-center gap-10 px-6 py-16 sm:py-24 md:flex-row">
         <AnimatedReveal className="flex flex-1 flex-col items-start gap-6">
           <span className="w-fit rounded-full bg-background px-4 py-1 text-sm font-medium text-primary">

@@ -54,6 +54,13 @@ export const CITIES: Record<"caboFrio" | "saoPedroDaAldeia", CityInfo> = {
   },
 };
 
+// Fotos reais do Gabriel usadas no crossfade de fundo do Hero.
+// Arquivos esperados em public/gab1.png e public/gab2.png.
+export const HERO_BACKGROUND_IMAGES = {
+  first: { src: "/gab1.png", alt: `Foto de ${PSYCHOLOGIST.name}` },
+  second: { src: "/gab2.png", alt: `Foto de ${PSYCHOLOGIST.name}` },
+} as const;
+
 export const IMAGES = {
   about: {
     src: "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?w=1600&q=80&auto=format&fit=crop",
