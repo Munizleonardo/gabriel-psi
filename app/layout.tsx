@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Fraunces, Manrope } from "next/font/google";
+import { Footer } from "@/app/_components/layout/footer";
+import { Navbar } from "@/app/_components/layout/navbar";
+import { WhatsappFloatButton } from "@/app/_components/layout/whatsapp-float-button";
+import { Toaster } from "@/app/_components/ui/sonner";
 import { PSYCHOLOGIST, SITE_URL } from "@/app/_lib/constants";
 import "./globals.css";
 
@@ -31,7 +35,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="pt-BR"
       className={`${fraunces.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Navbar />
+        <main className="flex flex-1 flex-col">{children}</main>
+        <Footer />
+        <WhatsappFloatButton />
+        <Toaster />
+      </body>
     </html>
   );
 }
