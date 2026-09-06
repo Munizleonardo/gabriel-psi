@@ -68,8 +68,8 @@ export const IMAGES = {
 } as const;
 
 export const NAV_LINKS = [
-  { href: "#sobre", label: "Sobre" },
-  { href: "#como-funciona", label: "Como funciona" },
+  { href: "/#sobre", label: "Sobre" },
+  { href: "/#como-funciona", label: "Como funciona" },
   { href: "#servicos", label: "Serviços" },
   { href: "#faq", label: "Perguntas frequentes" },
   { href: "#contato", label: "Contato" },
