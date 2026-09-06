@@ -13,7 +13,7 @@ const city = CITIES.saoPedroDaAldeia;
 
 export const metadata: Metadata = buildMetadata({
   title: `Psicólogo em ${city.name} — Atendimento Presencial e Online`,
-  description: `Psicólogo (CRP 05/87661) com atendimento presencial em ${city.name} (RJ) e online para todo o Brasil. Agende sua consulta.`,
+  description: `Psicólogo (CRP 05/87661) com atendimento presencial em ${city.name}, às margens da Lagoa de Araruama, e online para todo o Brasil. Agende sua consulta.`,
   path: `/${city.slug}`,
 });
 
