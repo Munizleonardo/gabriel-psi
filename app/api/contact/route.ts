@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { contactFormSchema } from "@/app/_lib/contact-schema";
-import { PSYCHOLOGIST } from "@/app/_lib/constants";
+import { INITIAL_CONTACT_EMAIL } from "@/app/_lib/constants";
 import { resend } from "@/app/_lib/resend";
 
 export async function POST(request: Request) {
@@ -23,7 +23,7 @@ export async function POST(request: Request) {
   try {
     const { error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL ?? "onboarding@resend.dev",
-      to: process.env.CONTACT_EMAIL ?? PSYCHOLOGIST.email,
+      to: process.env.CONTACT_EMAIL ?? INITIAL_CONTACT_EMAIL,
       replyTo: email,
       subject: `Novo contato pelo site — ${name}`,
       text: `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone || "não informado"}\n\nMensagem:\n${message}`,

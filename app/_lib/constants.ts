@@ -14,6 +14,11 @@ export const PSYCHOLOGIST = {
   photoUrl: null as string | null,
 };
 
+// Destino inicial dos e-mails do formulário de contato, enquanto a conta
+// Resend/e-mail definitivo do Gabriel não é configurado (via env var
+// CONTACT_EMAIL em produção). SUBSTITUA quando o Gabriel assumir o projeto.
+export const INITIAL_CONTACT_EMAIL = "munizzleonardo@gmail.com";
+
 export type CityInfo = {
   slug: string;
   name: string;
