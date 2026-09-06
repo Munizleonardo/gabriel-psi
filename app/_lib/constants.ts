@@ -28,9 +28,9 @@ export const CITIES: Record<"caboFrio" | "saoPedroDaAldeia", CityInfo> = {
     name: "Cabo Frio",
     state: "RJ",
     heroImage: {
-      src: "https://images.unsplash.com/photo-1569356855774-2161ca24fe20?w=1600&q=80&auto=format&fit=crop",
-      alt: "Mar calmo e azul, remetendo à orla de Cabo Frio",
-      credit: "Foto: Debby Ledet / Unsplash",
+      src: "https://images.unsplash.com/photo-1640890092058-eb23282e0039?w=1600&q=80&auto=format&fit=crop",
+      alt: "Barco na areia da Praia das Dunas, em Cabo Frio",
+      credit: "Foto: Wesley Caribe / Unsplash",
     },
     intro:
       "Atendimento presencial em Cabo Frio para quem busca um espaço de escuta próximo de casa, com a flexibilidade de também poder continuar as sessões online quando precisar.",
@@ -40,9 +40,9 @@ export const CITIES: Record<"caboFrio" | "saoPedroDaAldeia", CityInfo> = {
     name: "São Pedro da Aldeia",
     state: "RJ",
     heroImage: {
-      src: "https://images.unsplash.com/photo-1598105729174-32b798d63288?w=1600&q=80&auto=format&fit=crop",
-      alt: "Lagoa verde cercada de vegetação, remetendo à paisagem de São Pedro da Aldeia",
-      credit: "Foto: Barbara Šipek / Unsplash",
+      src: "https://images.unsplash.com/photo-1680815996886-531379632265?w=1600&q=80&auto=format&fit=crop",
+      alt: "Pôr do sol sobre a água em São Pedro da Aldeia",
+      credit: "Foto: João Gabriel / Unsplash",
     },
     intro:
       "Atendimento presencial em São Pedro da Aldeia, pensado para quem prefere o contato face a face, com a mesma flexibilidade de horários e acolhimento do atendimento online.",
@@ -59,6 +59,11 @@ export const IMAGES = {
     src: "https://images.unsplash.com/photo-1604881988758-f76ad2f7aac1?w=1600&q=80&auto=format&fit=crop",
     alt: "Duas pessoas em uma conversa acolhedora à mesa",
     credit: "Foto: Priscilla Du Preez / Unsplash",
+  },
+  online: {
+    src: "https://images.unsplash.com/photo-1758691462743-f9fc9e430d39?w=1600&q=80&auto=format&fit=crop",
+    alt: "Consulta por videochamada em um notebook",
+    credit: "Foto: Vitaly Gariev / Unsplash",
   },
 } as const;
 

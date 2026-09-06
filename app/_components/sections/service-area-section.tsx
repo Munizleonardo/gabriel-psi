@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Globe } from "lucide-react";
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
 import { SectionHeading } from "@/app/_components/shared/section-heading";
-import { CITIES } from "@/app/_lib/constants";
+import { CITIES, IMAGES } from "@/app/_lib/constants";
 
 export function ServiceAreaSection() {
   const cities = Object.values(CITIES);
@@ -22,7 +22,7 @@ export function ServiceAreaSection() {
           <AnimatedReveal
             key={city.slug}
             delay={index * 0.1}
-            className="group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-2xl"
+            className="group relative flex aspect-video flex-col justify-end overflow-hidden rounded-2xl sm:aspect-[4/5]"
           >
             <Image
               src={city.heroImage.src}
@@ -45,11 +45,20 @@ export function ServiceAreaSection() {
 
         <AnimatedReveal
           delay={0.2}
-          className="flex aspect-[4/5] flex-col justify-center gap-3 rounded-2xl bg-primary p-6 text-primary-foreground"
+          className="group relative flex aspect-video flex-col justify-end overflow-hidden rounded-2xl sm:aspect-[4/5]"
         >
-          <Globe className="size-8" />
-          <span className="font-heading text-xl">Online</span>
-          <p className="text-sm">Atendimento por videochamada para todo o Brasil.</p>
+          <Image
+            src={IMAGES.online.src}
+            alt={IMAGES.online.alt}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            sizes="(min-width: 640px) 33vw, 100vw"
+          />
+          <div className="relative z-10 flex flex-col gap-2 bg-gradient-to-t from-primary/90 to-primary/10 p-6 text-primary-foreground">
+            <Globe className="size-6" />
+            <span className="font-heading text-xl">Online</span>
+            <p className="text-sm">Atendimento por videochamada para todo o Brasil.</p>
+          </div>
         </AnimatedReveal>
       </div>
     </section>

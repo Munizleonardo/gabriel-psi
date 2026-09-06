@@ -1,5 +1,5 @@
-import { MessageCircle } from "lucide-react";
 import { Button } from "@/app/_components/ui/button";
+import { WhatsappIcon } from "@/app/_components/shared/whatsapp-icon";
 import { buildWhatsAppLink } from "@/app/_lib/whatsapp";
 
 type WhatsappButtonProps = {
@@ -20,7 +20,7 @@ export function WhatsappButton({
   return (
     <Button asChild size={size} variant={variant} className={className}>
       <a href={buildWhatsAppLink(message)} target="_blank" rel="noopener noreferrer">
-        <MessageCircle className="size-4" />
+        <WhatsappIcon className="size-4" />
         {label}
       </a>
     </Button>
