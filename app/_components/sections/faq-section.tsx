@@ -24,17 +24,24 @@ export function FaqSection() {
   };
 
   return (
-    <section id="faq" className="bg-secondary">
-      <div className="mx-auto max-w-3xl px-6 py-16 sm:py-24">
-        <SectionHeading eyebrow="Perguntas frequentes" title="Tirando suas dúvidas" className="mb-10" />
-        <AnimatedReveal>
+    <section id="faq" className="bg-dark-brown text-dark-brown-foreground">
+      <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+        <SectionHeading eyebrow="Dúvidas" title="Perguntas frequentes" tone="dark" />
+
+        <AnimatedReveal className="mt-10">
           <Accordion type="single" collapsible>
             {FAQ_ITEMS.map((item) => (
-              <AccordionItem key={item.question} value={item.question}>
-                <AccordionTrigger className="text-left font-heading text-lg">
+              <AccordionItem
+                key={item.question}
+                value={item.question}
+                className="border-dark-brown-foreground/15"
+              >
+                <AccordionTrigger className="font-heading text-lg text-dark-brown-foreground hover:no-underline [&>svg]:text-dark-brown-foreground/60">
                   {item.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">{item.answer}</AccordionContent>
+                <AccordionContent className="text-dark-brown-foreground/75">
+                  {item.answer}
+                </AccordionContent>
               </AccordionItem>
             ))}
           </Accordion>

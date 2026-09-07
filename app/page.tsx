@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/app/_components/shared/json-ld";
 import { AboutSection } from "@/app/_components/sections/about-section";
-import { BenefitsSection } from "@/app/_components/sections/benefits-section";
-import { ContactSection } from "@/app/_components/sections/contact-section";
+import { ApproachSection } from "@/app/_components/sections/approach-section";
+import { CtaSection } from "@/app/_components/sections/cta-section";
 import { FaqSection } from "@/app/_components/sections/faq-section";
 import { HeroSection } from "@/app/_components/sections/hero-section";
 import { HowItWorksSection } from "@/app/_components/sections/how-it-works-section";
-import { InstagramSection } from "@/app/_components/sections/instagram-section";
-import { ServiceAreaSection } from "@/app/_components/sections/service-area-section";
+import { PresencialSection } from "@/app/_components/sections/presencial-section";
 import { ServicesSection } from "@/app/_components/sections/services-section";
 import { PSYCHOLOGIST, SITE_URL } from "@/app/_lib/constants";
 import { buildMetadata } from "@/app/_lib/metadata";
@@ -35,13 +34,12 @@ export default function Home() {
       <JsonLd data={personSchema} />
       <HeroSection />
       <AboutSection />
-      <HowItWorksSection />
       <ServicesSection />
-      <BenefitsSection />
-      <ServiceAreaSection />
+      <ApproachSection />
+      <HowItWorksSection />
+      <PresencialSection />
       <FaqSection />
-      <InstagramSection />
-      <ContactSection />
+      <CtaSection />
     </>
   );
 }

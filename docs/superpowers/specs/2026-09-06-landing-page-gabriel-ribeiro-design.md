@@ -2,6 +2,13 @@
 
 Data: 2026-09-06
 
+> **Atualização (2026-09-07):** a estrutura e o ritmo visual da home foram
+> revistos em `2026-09-07-page-restructure-design.md` (novo layout baseado
+> numa referência, seções Benefits/Instagram/formulário removidas, seção
+> "Abordagens" adicionada, CTA de WhatsApp no lugar do formulário). A paleta
+> e a tipografia da §8 são as do PR #3. As seções da §5 abaixo descrevem a
+> versão original.
+
 ## 1. Objetivo
 
 Landing page de conversão para o psicólogo Gabriel Ribeiro (CRP 05/87661), que

@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   },
   description:
     "Psicólogo (CRP 05/87661) com atendimento online para todo o Brasil e presencial em Cabo Frio e São Pedro da Aldeia, na Região dos Lagos (RJ).",
+  formatDetection: { telephone: false, address: false, email: false },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
