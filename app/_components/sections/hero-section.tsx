@@ -1,8 +1,21 @@
+import { Globe, HeartHandshake, MapPin, ShieldCheck } from "lucide-react";
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
-import { GabrielPhoto } from "@/app/_components/shared/gabriel-photo";
 import { HeroBackground } from "@/app/_components/shared/hero-background";
 import { WhatsappButton } from "@/app/_components/shared/whatsapp-button";
 import { CITIES, PSYCHOLOGIST } from "@/app/_lib/constants";
+
+const HERO_HIGHLIGHTS = [
+  {
+    icon: ShieldCheck,
+    text: `Sigilo ético, respaldado pelo CRP ${PSYCHOLOGIST.crp}`,
+  },
+  { icon: Globe, text: "Atendimento online para todo o Brasil" },
+  {
+    icon: MapPin,
+    text: `Presencial em ${CITIES.caboFrio.name} e ${CITIES.saoPedroDaAldeia.name}`,
+  },
+  { icon: HeartHandshake, text: "Primeira consulta com acolhimento total" },
+] as const;
 
 export function HeroSection() {
   return (
@@ -35,8 +48,15 @@ export function HeroSection() {
         </AnimatedReveal>
 
         <AnimatedReveal delay={0.15} className="flex flex-1 justify-center">
-          <div className="relative aspect-square w-64 overflow-hidden rounded-3xl shadow-lg sm:w-80">
-            <GabrielPhoto priority />
+          <div className="flex w-full max-w-sm flex-col gap-5 rounded-3xl border border-border bg-card p-6 shadow-lg sm:p-8">
+            {HERO_HIGHLIGHTS.map((highlight) => (
+              <div key={highlight.text} className="flex items-center gap-3">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
+                  <highlight.icon className="size-5" />
+                </span>
+                <span className="text-sm font-medium text-foreground">{highlight.text}</span>
+              </div>
+            ))}
           </div>
         </AnimatedReveal>
       </div>
