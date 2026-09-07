@@ -39,7 +39,10 @@ export function SectionHeading({
         {bar ? (
           <span
             aria-hidden="true"
-            className="mt-1 w-1 shrink-0 origin-top rounded-full bg-primary motion-safe:animate-[heading-bar-grow_0.5s_ease-out]"
+            className={cn(
+              "mt-1 w-1 shrink-0 origin-top rounded-full motion-safe:animate-[heading-bar-grow_0.5s_ease-out]",
+              dark ? "bg-accent" : "bg-primary"
+            )}
           />
         ) : null}
         <h2

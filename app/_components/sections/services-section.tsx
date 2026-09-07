@@ -1,5 +1,5 @@
 import { Globe, HeartHandshake, MapPin } from "lucide-react";
-import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
+import { AnimatedGroup } from "@/app/_components/shared/animated-group";
 import { SectionHeading } from "@/app/_components/shared/section-heading";
 import { CITIES, type CityInfo } from "@/app/_lib/constants";
 
@@ -32,22 +32,27 @@ export function ServicesSection({ city }: ServicesSectionProps) {
   ] as const;
 
   return (
-    <section id="servicos" className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-      <SectionHeading eyebrow="Serviços" title="Como posso te ajudar" className="mb-10" />
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-        {services.map((service, index) => (
-          <AnimatedReveal
-            key={service.title}
-            delay={index * 0.1}
-            className="flex flex-col gap-4 rounded-2xl border border-border bg-card p-6"
-          >
-            <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
-              <service.icon className="size-6" />
-            </span>
-            <h3 className="font-heading text-lg font-medium text-foreground">{service.title}</h3>
-            <p className="text-sm text-muted-foreground">{service.description}</p>
-          </AnimatedReveal>
-        ))}
+    <section id="servicos" className="bg-dark-green text-dark-green-foreground">
+      <div className="mx-auto max-w-6xl px-6 py-20 sm:py-28">
+        <SectionHeading eyebrow="O que ofereço" title="Serviços" tone="dark" />
+
+        <AnimatedGroup className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service, index) => (
+            <div
+              key={service.title}
+              className="flex h-full flex-col gap-3 rounded-xl border border-dark-green-foreground/12 bg-dark-brown/30 p-6 sm:p-7"
+            >
+              <div className="flex items-center gap-3">
+                <span className="font-heading text-3xl text-dark-green-foreground/45">
+                  0{index + 1}.
+                </span>
+                <service.icon className="size-5 text-dark-green-foreground/60" />
+              </div>
+              <h3 className="font-heading text-lg font-medium">{service.title}</h3>
+              <p className="text-sm text-dark-green-foreground/75">{service.description}</p>
+            </div>
+          ))}
+        </AnimatedGroup>
       </div>
     </section>
   );
