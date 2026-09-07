@@ -11,8 +11,12 @@ export function HeroSection() {
       id="inicio"
       className="surface-texture relative isolate overflow-hidden bg-dark-brown text-dark-brown-foreground"
     >
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 sm:py-28 lg:grid-cols-[1.1fr_0.9fr] lg:py-32">
-        <AnimatedReveal className="flex flex-col items-start gap-6">
+      <div className="mx-auto flex max-w-3xl flex-col items-center gap-8 px-6 py-20 text-center sm:py-28 lg:py-32">
+        <AnimatedReveal>
+          <HeroPortrait />
+        </AnimatedReveal>
+
+        <AnimatedReveal delay={0.15} className="flex flex-col items-center gap-6">
           <h1 className="font-heading text-4xl font-medium leading-[1.1] sm:text-5xl lg:text-6xl">
             Olá! Sou Gabriel Ribeiro, psicólogo clínico.
           </h1>
@@ -21,10 +25,6 @@ export function HeroSection() {
             {CITIES.caboFrio.name} e {CITIES.saoPedroDaAldeia.name} — Região dos Lagos (RJ)
           </p>
           <WhatsappButton tone="onDark" size="lg" message={WHATSAPP_MESSAGE} />
-        </AnimatedReveal>
-
-        <AnimatedReveal delay={0.15}>
-          <HeroPortrait />
         </AnimatedReveal>
       </div>
     </section>

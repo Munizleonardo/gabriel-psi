@@ -6,8 +6,8 @@ export const PSYCHOLOGIST = {
   crp: "05/87661",
   instagramUrl: "https://www.instagram.com/gabrielribeiro_psi/",
   instagramHandle: "@gabrielribeiro_psi",
-  // SUBSTITUA pelo número real de WhatsApp, formato internacional sem espaços/símbolos (ex: 5522988887777)
-  whatsappNumber: "5500000000000",
+  // Formato internacional sem espaços/símbolos. (22) 98111-4695
+  whatsappNumber: "5522981114695",
   // SUBSTITUA pelo e-mail real que vai receber os contatos do formulário
   email: "contato@gabrielribeiropsi.com.br",
   photoUrl: "/gab1.png" as string | null,
