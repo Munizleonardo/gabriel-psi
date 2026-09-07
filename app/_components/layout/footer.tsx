@@ -93,8 +93,9 @@ export function Footer() {
           <span>
             © {year} {PSYCHOLOGIST.fullTitle}. Todos os direitos reservados.
           </span>
-          {/* TODO: nome civil completo do Gabriel */}
-          <span>CRP {PSYCHOLOGIST.crp}</span>
+          <span>
+            {PSYCHOLOGIST.name} · CRP {PSYCHOLOGIST.crp}
+          </span>
         </div>
       </div>
     </footer>

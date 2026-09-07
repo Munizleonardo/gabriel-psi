@@ -3,6 +3,7 @@ import { SectionHeading } from "@/app/_components/shared/section-heading";
 import { CITIES, PSYCHOLOGIST } from "@/app/_lib/constants";
 
 const CREDENTIALS = [
+  "Formado em Psicologia",
   `CRP ${PSYCHOLOGIST.crp} — Conselho Regional de Psicologia`,
   "Atendimento individual para adultos",
   "Online para todo o Brasil",
@@ -45,7 +46,7 @@ export function AboutSection() {
                 </li>
               ))}
             </ul>
-            {/* TODO: formação acadêmica do Gabriel (graduação, especializações) quando ele enviar */}
+            {/* Especializações/pós podem entrar aqui quando o Gabriel enviar. */}
           </AnimatedReveal>
         </div>
       </div>
