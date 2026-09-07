@@ -88,7 +88,7 @@ export function Footer() {
         </FooterCol>
       </div>
 
-      <div className="border-t border-dark-brown-foreground/12 px-6 py-5">
+      <div className="border-t border-dark-brown-foreground/12 px-6 py-5 sm:pr-24">
         <div className="mx-auto flex max-w-6xl flex-col gap-1 text-xs sm:flex-row sm:items-center sm:justify-between">
           <span>
             © {year} {PSYCHOLOGIST.fullTitle}. Todos os direitos reservados.

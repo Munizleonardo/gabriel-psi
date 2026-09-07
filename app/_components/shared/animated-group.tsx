@@ -38,7 +38,11 @@ export function AnimatedGroup({ children, className, stagger = 0.08 }: AnimatedG
       transition={{ staggerChildren: stagger }}
     >
       {Children.map(children, (child) => (
-        <motion.div variants={item} transition={{ duration: 0.5, ease: "easeOut" }}>
+        <motion.div
+          data-reveal=""
+          variants={item}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           {child}
         </motion.div>
       ))}

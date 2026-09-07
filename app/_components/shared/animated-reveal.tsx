@@ -37,6 +37,7 @@ export function AnimatedReveal({
 
   return (
     <Tag
+      data-reveal=""
       className={className}
       initial="hidden"
       whileInView="visible"

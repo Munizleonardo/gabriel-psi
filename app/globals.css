@@ -144,3 +144,12 @@ body {
     transform: scaleY(1);
   }
 }
+
+/* Sem JS: as animações de entrada nunca disparam — garante que o conteúdo
+   revelado apareça mesmo assim. */
+@media (scripting: none) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
