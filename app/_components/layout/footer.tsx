@@ -7,9 +7,11 @@ const WHATSAPP_MESSAGE = "Olá, Gabriel! Vim pelo site e gostaria de agendar uma
 
 const NAV = [
   { href: "/#inicio", label: "Início" },
-  { href: "/#sobre", label: "Sobre" },
-  { href: "/#servicos", label: "Serviços" },
-  { href: "/#como-funciona", label: "Como funciona" },
+  { href: "/#terapia", label: "Como é a terapia" },
+  { href: "/#sobre", label: "Quem sou eu" },
+  { href: "/#servicos", label: "Com o que eu trabalho" },
+  { href: "/#abordagem", label: "Abordagem" },
+  { href: "/#como-funciona", label: "Passo a passo" },
   { href: "/#faq", label: "Perguntas frequentes" },
   { href: "/#contato", label: "Contato" },
 ];

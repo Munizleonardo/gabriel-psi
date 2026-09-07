@@ -1,38 +1,29 @@
+import { AnimatedGroup } from "@/app/_components/shared/animated-group";
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
 import { SectionHeading } from "@/app/_components/shared/section-heading";
-import { CLINIC_PRINCIPLES } from "@/app/_lib/constants";
+import { APPROACH } from "@/app/_lib/constants";
 
 export function ApproachSection() {
   return (
-    <section
-      id="abordagens"
-      className="bg-dark-brown text-dark-brown-foreground"
-    >
+    <section id="abordagem" className="bg-dark-brown text-dark-brown-foreground">
       <div className="mx-auto max-w-5xl px-6 py-20 sm:py-28">
-        <SectionHeading eyebrow="Como eu trabalho" title="Princípios da clínica" tone="dark" />
+        <SectionHeading eyebrow="Como eu trabalho" title={APPROACH.name} tone="dark" />
 
-        <div className="mt-12 flex flex-col gap-12 sm:gap-16">
-          {CLINIC_PRINCIPLES.map((principle, index) => {
-            const flipped = index % 2 === 1;
-            return (
-              <AnimatedReveal
-                key={principle.term}
-                className={`grid items-center gap-3 border-t border-dark-brown-foreground/12 pt-8 sm:grid-cols-2 sm:gap-10 ${
-                  flipped ? "sm:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <h3
-                  className={`font-heading text-2xl font-medium sm:text-3xl ${
-                    flipped ? "sm:text-right" : ""
-                  }`}
-                >
-                  {principle.term}
-                </h3>
-                <p className="text-dark-brown-foreground/75">{principle.text}</p>
-              </AnimatedReveal>
-            );
-          })}
-        </div>
+        <AnimatedReveal className="mt-8 max-w-2xl text-lg text-dark-brown-foreground/80">
+          {APPROACH.lead}
+        </AnimatedReveal>
+
+        <AnimatedGroup className="mt-12 grid gap-8 sm:grid-cols-2">
+          {APPROACH.points.map((point) => (
+            <div
+              key={point.term}
+              className="border-t border-dark-brown-foreground/15 pt-5"
+            >
+              <h3 className="font-heading text-xl font-medium sm:text-2xl">{point.term}</h3>
+              <p className="mt-2 text-dark-brown-foreground/75">{point.text}</p>
+            </div>
+          ))}
+        </AnimatedGroup>
       </div>
     </section>
   );

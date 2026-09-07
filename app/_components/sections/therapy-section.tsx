@@ -1,0 +1,64 @@
+"use client";
+
+import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
+import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
+import { SectionHeading } from "@/app/_components/shared/section-heading";
+import { THERAPY_COPY } from "@/app/_lib/constants";
+
+type Audience = "adults" | "teens";
+
+function Paragraph({ text }: { text: string }) {
+  if (text.includes("\n")) {
+    return (
+      <p className="whitespace-pre-line border-l-2 border-primary/40 pl-4 italic text-foreground/80">
+        {text}
+      </p>
+    );
+  }
+  if (text.length <= 62) {
+    return <p className="font-heading text-xl text-foreground sm:text-2xl">{text}</p>;
+  }
+  return <p>{text}</p>;
+}
+
+export function TherapySection() {
+  const [audience, setAudience] = useState<Audience>("adults");
+  const copy = THERAPY_COPY[audience];
+  const toAdults = audience === "adults";
+
+  return (
+    <section id="terapia" className="bg-background">
+      <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
+        <SectionHeading eyebrow="A proposta" title="Como é a terapia comigo?" />
+
+        <div className="mt-8">
+          <button
+            type="button"
+            onClick={() => setAudience(toAdults ? "teens" : "adults")}
+            className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+          >
+            {toAdults ? (
+              <>
+                Ver para adolescentes
+                <ArrowRight className="size-4" />
+              </>
+            ) : (
+              <>
+                <ArrowLeft className="size-4" />
+                Ver para adultos
+              </>
+            )}
+          </button>
+        </div>
+
+        <AnimatedReveal key={audience} className="mt-8 flex flex-col gap-5 text-muted-foreground">
+          <h3 className="font-heading text-2xl font-medium text-foreground">{copy.heading}</h3>
+          {copy.paragraphs.map((text) => (
+            <Paragraph key={text.slice(0, 24)} text={text} />
+          ))}
+        </AnimatedReveal>
+      </div>
+    </section>
+  );
+}

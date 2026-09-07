@@ -18,11 +18,16 @@ export function CtaSection() {
           bar={false}
           className="items-center text-center"
         />
-        <p className="max-w-lg text-dark-green-foreground/80">
-          Cada história é única e merece ser ouvida com atenção. Estou aqui pra te acompanhar
-          nesse processo.
+        <p className="max-w-md text-dark-green-foreground/80">
+          Se algo aqui fez sentido, me chama. A gente conversa sem compromisso.
         </p>
-        <WhatsappButton tone="onDark" size="lg" message={WHATSAPP_MESSAGE} label="Falar no WhatsApp" />
+        <WhatsappButton
+          tone="onDark"
+          size="lg"
+          message={WHATSAPP_MESSAGE}
+          label="Chamar no WhatsApp"
+          className="h-12 px-8 text-base"
+        />
       </AnimatedReveal>
     </section>
   );

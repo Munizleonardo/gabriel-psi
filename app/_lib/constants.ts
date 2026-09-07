@@ -73,32 +73,72 @@ export const IMAGES = {
 
 export const NAV_LINKS = [
   { href: "/#inicio", label: "Início" },
+  { href: "/#terapia", label: "Terapia" },
   { href: "/#sobre", label: "Sobre" },
-  { href: "/#servicos", label: "Serviços" },
   { href: "/#como-funciona", label: "Como funciona" },
   { href: "/#contato", label: "Contato" },
 ] as const;
 
-// Pilares da clínica do Gabriel — seção "Abordagens" (layout editorial
-// alternado, no lugar das escolas teóricas da referência).
-export const CLINIC_PRINCIPLES = [
-  {
-    term: "Escuta ativa",
-    text: "Te escuto sem pressa e sem julgamento, atento ao detalhe do que você traz.",
+// Seção "Como é a terapia comigo?" — dois textos, alternados por um botão.
+// Parágrafos curtos (≤ ~60 caracteres) são renderizados em destaque.
+export const THERAPY_COPY = {
+  adults: {
+    heading: "Se você é adulto…",
+    paragraphs: [
+      "Primeiro, é bom a gente ajustar as expectativas. Não estou aqui para te mudar, nem para te dar conselho, nem para dizer o que fazer, porque esse trabalho é para os seus amigos. O meu trabalho é entender como você funciona nos seus pensamentos e emoções, ou pelo menos tentar entender.",
+      "Meu trabalho é tentar me colocar no seu lugar, tentar ver o mundo com os seus olhos e, da perspectiva de uma pessoa que está fora da situação, tentar te ajudar a enxergar outros pontos de vista além daquele que você já está apresentando.",
+      "Se você me conta que é ansioso, beleza, vamos trabalhar com isso.",
+      "Vamos tentar descobrir o que é que tá causando essa ansiedade, como é que ela funciona, como isso se reflete emocionalmente em você e como interfere na sua tomada de decisão. E aí você decide o que a gente vai fazer com isso.",
+      "Você é o piloto, e eu tô aqui servindo de navegador.",
+      "Se você me disser que os efeitos dela estão te atrapalhando, ou que você quer mudar a forma de reagir ou de enxergar a ansiedade, a gente consegue trabalhar nisso. Se você me disser que está de boa com isso e que a sua questão é outra, a gente também consegue trabalhar com essa ideia.",
+      "Você está no controle da sua terapia.",
+      "E o principal é que eu tô aqui pra ver o cenário inteiro. Não vou te tratar pelo nome de um diagnóstico e nem vou ficar agindo como se você fosse um coitado por ter um laudo. Meu trabalho é te entender como indivíduo e ver o mundo junto contigo.",
+      "Não te vejo como “o paciente ansioso”, “o paciente autista”, “o paciente depressivo”.",
+      "Eu vejo você.",
+      "E todos esses diagnósticos vão ser levados em consideração, mas de um jeito que permita à gente entender se, e como, eles fazem parte da pessoa que você é.",
+    ],
   },
-  {
-    term: "Acolhimento",
-    text: "Um espaço seguro pra falar do que pesa, sem medo de ser avaliado.",
+  teens: {
+    heading: "E para adolescentes?",
+    paragraphs: [
+      "Às vezes, os pais de adolescentes vêm procurar terapia pros filhos e o tipo de coisa que eu costumo ouvir é:",
+      "“Ele não obedece ninguém.”\n“Ela tá muito fechada, se isolou.”\n“Ela mudou completamente com a gente.”",
+      "E a primeira advertência que eu dou é a seguinte: isso não é hipnose nem magia. Antes de considerar qualquer intervenção, eu preciso entender o que tá acontecendo aí dentro.",
+      "É muito necessário entender quem é esse adolescente que está se tornando uma pessoa cada vez mais própria e, principalmente, o que esses comportamentos significam pra ele. Porque nem toda mudança é sinal de que alguma coisa deu errado.",
+      "Eu preciso permitir que esse adolescente seja lido como uma pessoa. Uma pessoa única, não como uma extensão da família. Ele precisa ter espaço pra desenvolver a própria autenticidade e, aí sim, a gente entende se tem alguma coisa que precisa ser trabalhada.",
+      "Pode ser que o que os pais enxerguem como “rebeldia” seja um adolescente começando a perceber que pensa diferente. O isolamento pode ser sofrimento. Às vezes, é só uma necessidade maior de privacidade ou pode ser que exista um conflito importante acontecendo.",
+      "Meu trabalho não é fazer seu filho voltar pra casa “obedecendo melhor”. Também não é ensinar ele a concordar com vocês.",
+      "O que eu faço é dar pra ele um espaço em que consiga falar com liberdade, entender melhor o que sente, perceber o que quer e desenvolver formas mais conscientes de lidar com a própria vida e com as relações ao redor.",
+      "E isso inclui a família, claro. Adolescente não vive sozinho. Existem pais, regras, responsabilidades, escola, limites e convivência. Tudo isso importa.",
+      "Mas a terapia não pode virar um lugar em que o adolescente entra pra ser “consertado” e devolvido do jeito que os adultos esperavam.",
+    ],
   },
-  {
-    term: "Vínculo e confiança",
-    text: "A terapia acontece na relação — construímos isso com cuidado, sessão após sessão.",
-  },
-  {
-    term: "No seu ritmo",
-    text: "Cada processo tem seu tempo. Revemos juntos para onde caminhar.",
-  },
-] as const;
+} as const;
+
+// Seção "Abordagem" — Abordagem Centrada na Pessoa (Carl Rogers).
+// TODO: revisar/ajustar com o Gabriel.
+export const APPROACH = {
+  name: "Abordagem Centrada na Pessoa",
+  lead: "Trabalho na Abordagem Centrada na Pessoa. Ela parte de uma confiança: a de que cada pessoa tem, dentro de si, a direção do próprio crescimento — e que o meu papel é ajudar a criar as condições pra isso acontecer.",
+  points: [
+    {
+      term: "Você conduz",
+      text: "Não decido por você o que precisa mudar. Caminho junto enquanto você entende o que sente e escolhe o que fazer com isso.",
+    },
+    {
+      term: "Empatia",
+      text: "Tento ver o mundo a partir do seu ponto de vista, sem julgar, pra entender o que as coisas significam pra você.",
+    },
+    {
+      term: "Aceitação",
+      text: "Um espaço em que você pode falar do que pesa sem medo de ser avaliado ou reduzido a um diagnóstico.",
+    },
+    {
+      term: "Autenticidade",
+      text: "Uma relação real, sem encenação — porque é na relação que a terapia acontece.",
+    },
+  ],
+} as const;
 
 export const FAQ_ITEMS = [
   {
