@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "cn";
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
 import { SectionHeading } from "@/app/_components/shared/section-heading";
@@ -40,6 +41,7 @@ function Paragraph({ text }: { text: string }) {
 export function TherapySection() {
   const [audience, setAudience] = useState<Audience>("adults");
   const copy = THERAPY_COPY[audience];
+  const toAdults = audience === "adults";
 
   return (
     <section id="terapia" className="bg-background">
@@ -72,6 +74,24 @@ export function TherapySection() {
             <Paragraph key={text.slice(0, 24)} text={text} />
           ))}
         </AnimatedReveal>
+
+        <button
+          type="button"
+          onClick={() => setAudience(toAdults ? "teens" : "adults")}
+          className="mt-10 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+        >
+          {toAdults ? (
+            <>
+              Ver para adolescentes
+              <ArrowRight className="size-4" />
+            </>
+          ) : (
+            <>
+              <ArrowLeft className="size-4" />
+              Ver para adultos
+            </>
+          )}
+        </button>
       </div>
     </section>
   );
