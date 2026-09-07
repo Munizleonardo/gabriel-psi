@@ -10,7 +10,7 @@ export function WhatsappFloatButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar no WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex size-14 animate-pulse items-center justify-center rounded-full bg-dark text-dark-foreground shadow-lg transition-transform hover:scale-105 motion-reduce:animate-none"
+      className="fixed bottom-6 right-6 z-50 flex size-14 animate-pulse items-center justify-center rounded-full bg-dark-green text-dark-green-foreground shadow-lg transition-transform hover:scale-105 motion-reduce:animate-none"
     >
       <WhatsappIcon className="size-7" />
     </a>

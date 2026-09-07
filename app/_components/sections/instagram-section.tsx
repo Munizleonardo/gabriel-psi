@@ -6,12 +6,12 @@ import { PSYCHOLOGIST } from "@/app/_lib/constants";
 export function InstagramSection() {
   return (
     <section className="mx-auto max-w-6xl px-6 py-16 sm:py-24">
-      <AnimatedReveal className="flex flex-col items-center gap-6 rounded-3xl bg-dark px-6 py-12 text-center text-dark-foreground">
+      <AnimatedReveal className="flex flex-col items-center gap-6 rounded-3xl bg-dark-green px-6 py-12 text-center text-dark-green-foreground">
         <AtSign className="size-10" />
         <SectionHeading
           title="Acompanhe no Instagram"
           description={`Conteúdos sobre saúde mental e bastidores do consultório em ${PSYCHOLOGIST.instagramHandle}.`}
-          className="items-center text-center [&_h2]:text-dark-foreground [&_p]:text-dark-foreground/90"
+          className="items-center text-center [&_h2]:text-dark-green-foreground [&_p]:text-dark-green-foreground/90"
         />
         <a
           href={PSYCHOLOGIST.instagramUrl}
