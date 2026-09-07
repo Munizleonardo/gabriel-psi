@@ -43,13 +43,13 @@ export function TherapySection() {
   const copy = THERAPY_COPY[audience];
   const toAdults = audience === "adults";
 
-  const headingRef = useRef<HTMLHeadingElement>(null);
+  const topRef = useRef<HTMLDivElement>(null);
   const scrollOnChange = useRef(false);
 
   useEffect(() => {
     if (!scrollOnChange.current) return;
     scrollOnChange.current = false;
-    headingRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [audience]);
 
   function toggleFromEnd() {
@@ -60,7 +60,9 @@ export function TherapySection() {
   return (
     <section id="terapia" className="bg-background">
       <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
-        <SectionHeading eyebrow="A proposta" title="Como é a terapia comigo?" />
+        <div ref={topRef} className="scroll-mt-20">
+          <SectionHeading eyebrow="A proposta" title="Como é a terapia comigo?" />
+        </div>
 
         <div className="mt-8 flex gap-4 sm:gap-6">
           {OPTIONS.map((option) => {
@@ -83,12 +85,7 @@ export function TherapySection() {
         </div>
 
         <AnimatedReveal key={audience} className="mt-10 flex flex-col gap-5 text-muted-foreground">
-          <h3
-            ref={headingRef}
-            className="scroll-mt-28 font-heading text-2xl font-medium text-foreground"
-          >
-            {copy.heading}
-          </h3>
+          <h3 className="font-heading text-2xl font-medium text-foreground">{copy.heading}</h3>
           {copy.paragraphs.map((text) => (
             <Paragraph key={text.slice(0, 24)} text={text} />
           ))}
