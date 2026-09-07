@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/app/_components/shared/json-ld";
 import { AboutSection } from "@/app/_components/sections/about-section";
+import { ApproachSection } from "@/app/_components/sections/approach-section";
 import { BenefitsSection } from "@/app/_components/sections/benefits-section";
 import { ContactSection } from "@/app/_components/sections/contact-section";
 import { FaqSection } from "@/app/_components/sections/faq-section";
@@ -35,8 +36,9 @@ export default function Home() {
       <JsonLd data={personSchema} />
       <HeroSection />
       <AboutSection />
-      <HowItWorksSection />
       <ServicesSection />
+      <ApproachSection />
+      <HowItWorksSection />
       <BenefitsSection />
       <ServiceAreaSection />
       <FaqSection />
