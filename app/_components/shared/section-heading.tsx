@@ -30,7 +30,6 @@ export function SectionHeading({
             dark ? "text-accent" : "text-primary"
           )}
         >
-          <span aria-hidden="true">— </span>
           {eyebrow}
         </span>
       ) : null}

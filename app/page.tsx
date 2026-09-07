@@ -13,7 +13,7 @@ import { PSYCHOLOGIST, SITE_URL } from "@/app/_lib/constants";
 import { buildMetadata } from "@/app/_lib/metadata";
 
 export const metadata: Metadata = buildMetadata({
-  title: `${PSYCHOLOGIST.name} — Psicólogo Online e em Cabo Frio / São Pedro da Aldeia`,
+  title: `${PSYCHOLOGIST.name} · Psicólogo Online e em Cabo Frio / São Pedro da Aldeia`,
   description:
     "Psicólogo (CRP 05/87661) com atendimento online para todo o Brasil e presencial em Cabo Frio e São Pedro da Aldeia. Agende sua consulta.",
   path: "/",

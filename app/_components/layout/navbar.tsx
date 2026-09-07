@@ -42,7 +42,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-dark-green text-dark-green-foreground">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-        <Link href="/" aria-label={`${PSYCHOLOGIST.fullTitle} — início`}>
+        <Link href="/" aria-label={`${PSYCHOLOGIST.fullTitle}, início`}>
           <Brand />
         </Link>
 

@@ -14,7 +14,7 @@ export default function PoliticaDePrivacidadePage() {
       <h1 className="font-heading text-3xl font-medium text-foreground">Política de Privacidade</h1>
       <p className="text-muted-foreground">
         Esta página explica como as informações enviadas pelo formulário de contato deste site são
-        utilizadas, em conformidade com a Lei Geral de Proteção de Dados (LGPD — Lei nº 13.709/2018).
+        utilizadas, em conformidade com a Lei Geral de Proteção de Dados (LGPD, Lei nº 13.709/2018).
       </p>
 
       <h2 className="font-heading text-xl font-medium text-foreground">Quais dados são coletados</h2>
