@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AtSign, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { WhatsappIcon } from "@/app/_components/shared/whatsapp-icon";
 import { buildWhatsAppLink } from "@/app/_lib/whatsapp";
 import { PSYCHOLOGIST } from "@/app/_lib/constants";
@@ -83,9 +83,8 @@ export function Footer() {
             href={PSYCHOLOGIST.instagramUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 transition-colors hover:text-dark-brown-foreground"
+            className="transition-colors hover:text-dark-brown-foreground"
           >
-            <AtSign className="size-4" />
             {PSYCHOLOGIST.instagramHandle}
           </a>
         </FooterCol>
