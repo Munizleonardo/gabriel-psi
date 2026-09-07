@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/app/_components/shared/json-ld";
+import { ApproachSection } from "@/app/_components/sections/approach-section";
 import { CtaSection } from "@/app/_components/sections/cta-section";
 import { FaqSection } from "@/app/_components/sections/faq-section";
 import { HowItWorksSection } from "@/app/_components/sections/how-it-works-section";
 import { LocationHeroSection } from "@/app/_components/sections/location-hero-section";
 import { PresencialSection } from "@/app/_components/sections/presencial-section";
 import { ServicesSection } from "@/app/_components/sections/services-section";
+import { TherapySection } from "@/app/_components/sections/therapy-section";
 import { CITIES, SITE_URL } from "@/app/_lib/constants";
 import { buildMetadata } from "@/app/_lib/metadata";
 
@@ -35,7 +37,9 @@ export default function PsicologoCaboFrioPage() {
     <>
       <JsonLd data={localBusinessSchema} />
       <LocationHeroSection city={city} />
+      <TherapySection />
       <ServicesSection city={city} />
+      <ApproachSection />
       <HowItWorksSection />
       <PresencialSection />
       <FaqSection />

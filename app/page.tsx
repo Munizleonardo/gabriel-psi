@@ -8,6 +8,7 @@ import { HeroSection } from "@/app/_components/sections/hero-section";
 import { HowItWorksSection } from "@/app/_components/sections/how-it-works-section";
 import { PresencialSection } from "@/app/_components/sections/presencial-section";
 import { ServicesSection } from "@/app/_components/sections/services-section";
+import { TherapySection } from "@/app/_components/sections/therapy-section";
 import { PSYCHOLOGIST, SITE_URL } from "@/app/_lib/constants";
 import { buildMetadata } from "@/app/_lib/metadata";
 
@@ -33,6 +34,7 @@ export default function Home() {
     <>
       <JsonLd data={personSchema} />
       <HeroSection />
+      <TherapySection />
       <AboutSection />
       <ServicesSection />
       <ApproachSection />

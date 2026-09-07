@@ -114,15 +114,16 @@ export function Navbar() {
               ))}
             </nav>
 
-            <div className="shrink-0 space-y-4 border-t border-border p-6">
+            <div className="shrink-0 space-y-3 border-t border-border p-6">
               <a
                 href={PSYCHOLOGIST.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => setOpen(false)}
+                className="flex w-full items-center justify-center gap-2 rounded-md border border-border px-4 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
               >
                 <AtSign className="size-4" />
-                {PSYCHOLOGIST.instagramHandle}
+                Me siga no Instagram
               </a>
               <WhatsappButton message={WHATSAPP_MESSAGE} className="w-full" />
             </div>
