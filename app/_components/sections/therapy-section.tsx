@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { cn } from "cn";
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
@@ -43,10 +43,26 @@ export function TherapySection() {
   const copy = THERAPY_COPY[audience];
   const toAdults = audience === "adults";
 
+  const topRef = useRef<HTMLDivElement>(null);
+  const scrollOnChange = useRef(false);
+
+  useEffect(() => {
+    if (!scrollOnChange.current) return;
+    scrollOnChange.current = false;
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, [audience]);
+
+  function toggleFromEnd() {
+    scrollOnChange.current = true;
+    setAudience(toAdults ? "teens" : "adults");
+  }
+
   return (
     <section id="terapia" className="bg-background">
       <div className="mx-auto max-w-3xl px-6 py-20 sm:py-28">
-        <SectionHeading eyebrow="A proposta" title="Como é a terapia comigo?" />
+        <div ref={topRef} className="scroll-mt-20">
+          <SectionHeading eyebrow="A proposta" title="Como é a terapia comigo?" />
+        </div>
 
         <div className="mt-8 flex gap-4 sm:gap-6">
           {OPTIONS.map((option) => {
@@ -77,7 +93,7 @@ export function TherapySection() {
 
         <button
           type="button"
-          onClick={() => setAudience(toAdults ? "teens" : "adults")}
+          onClick={toggleFromEnd}
           className="mt-10 inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
         >
           {toAdults ? (
