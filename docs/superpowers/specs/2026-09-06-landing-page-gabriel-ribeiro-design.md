@@ -152,22 +152,27 @@ app/
 ## 8. Design visual
 
 - Paleta (light mode apenas), mapeada nas CSS variables que o shadcn usa em
-  `app/globals.css`:
+  `app/globals.css`. Princípio: **Bordô = ações** (botões, links, foco) ·
+  **Terra = destaque/hover** · **Verde = superfícies escuras** ·
+  **Café = texto** · **Musgo = texto secundário** · **Creme = fundo**.
 
-  | Token shadcn | Uso | Cor aproximada |
+  | Token shadcn | Uso | Cor |
   |---|---|---|
-  | `--background` | Fundo padrão | Areia claro `#F7F5F0` |
-  | `--foreground` | Texto | Cinza-chumbo `#33403A` |
-  | `--primary` | Seções/destaques, botões secundários | Verde-sálvia `#7C9473` |
-  | `--secondary` | Fundo de seções alternadas | Areia mais escuro `#EFEAE0` |
-  | `--accent` | CTA principal (botão de WhatsApp/enviar) | Terracota `#C1694F` |
-  | `--muted-foreground` | Texto secundário | Cinza-esverdeado `#6B7A70` |
-  | `--border` | Bordas/divisores | `#E3DED2` |
+  | `--background` | Fundo padrão | Creme Fundo `#F0E7C2` |
+  | `--foreground` | Texto | Café Primário `#2D120D` |
+  | `--card` / `--popover` | Cards, popovers | Off-white quente `#FBF8EE` (derivado) |
+  | `--primary` | Botões/CTA, links, foco | Bordó Primário `#3B0014` |
+  | `--secondary` / `--muted` | Fundo de seções alternadas | Areia `#E7DBB4` (derivado do Creme) |
+  | `--accent` | Destaque, hover de botões outline/ghost | Terra Destaque `#954130` |
+  | `--muted-foreground` | Texto secundário | Musgo `#586448` (Musgo `#687451` aprofundado p/ contraste AA) |
+  | `--border` / `--input` | Bordas/divisores | Areia fechada `#D8CB9E` |
+  | `--ring` | Anel de foco | Bordó `#3B0014` |
+  | `--dark` / `--dark-foreground` | Seções de contraste (footer, faixa do Instagram, botão flutuante de WhatsApp) | Verde Secundário `#00291C` / Creme `#F0E7C2` |
 
-  Valores exatos podem ser ajustados no implementação para acessibilidade
-  (contraste AA), mas a direção de cor é essa.
-- Tipografia via `next/font`: serif humanista para títulos (acolhimento) +
-  sans-serif limpa para o corpo (legibilidade/profissionalismo).
+  Valores derivados (`--card`, `--secondary`, `--border`) e o `--muted-foreground`
+  foram calibrados para contraste AA sobre o Creme.
+- Tipografia via `next/font`: **Fraunces** (serif humanista) para títulos
+  (acolhimento) + **DM Sans** para o corpo (legibilidade/profissionalismo).
 - Animações via `motion`: fade-in + slide-up ao entrar no viewport em cada
   seção (wrapper reutilizável `AnimatedReveal`), hover sutil em cards/botões
   via utilities do Tailwind, pulse discreto no botão flutuante de WhatsApp.

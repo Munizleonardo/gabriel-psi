@@ -16,8 +16,8 @@ export default function Image() {
           alignItems: "center",
           justifyContent: "center",
           gap: 24,
-          backgroundColor: "#f7f5f0",
-          color: "#33403a",
+          backgroundColor: "#f0e7c2",
+          color: "#2d120d",
         }}
       >
         <div
@@ -26,8 +26,8 @@ export default function Image() {
             width: 140,
             height: 140,
             borderRadius: 70,
-            backgroundColor: "#7c9473",
-            color: "#f7f5f0",
+            backgroundColor: "#3b0014",
+            color: "#f0e7c2",
             alignItems: "center",
             justifyContent: "center",
             fontSize: 56,
@@ -36,7 +36,7 @@ export default function Image() {
           GR
         </div>
         <div style={{ display: "flex", fontSize: 56 }}>{PSYCHOLOGIST.fullTitle}</div>
-        <div style={{ display: "flex", fontSize: 28, color: "#6b7a70" }}>
+        <div style={{ display: "flex", fontSize: 28, color: "#586448" }}>
           CRP {PSYCHOLOGIST.crp} · Atendimento online e em Cabo Frio / São Pedro da Aldeia
         </div>
       </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { DM_Sans, Fraunces } from "next/font/google";
 import { Footer } from "@/app/_components/layout/footer";
 import { Navbar } from "@/app/_components/layout/navbar";
 import { WhatsappFloatButton } from "@/app/_components/layout/whatsapp-float-button";
@@ -13,7 +13,7 @@ const fraunces = Fraunces({
   weight: ["400", "500", "600"],
 });
 
-const manrope = Manrope({
+const dmSans = DM_Sans({
   variable: "--font-body",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -33,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="pt-BR"
-      className={`${fraunces.variable} ${manrope.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <Navbar />
