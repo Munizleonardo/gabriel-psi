@@ -38,18 +38,18 @@ individual*, *psicólogo para adolescentes*, *Abordagem Centrada na Pessoa*,
 
 ## 2. Bloqueadores — dependem de decisão/dado do Gabriel
 
-Nada disso é código puro; sem essas respostas o SEO fica capado.
+Respostas do Gabriel (2026-09-07) incorporadas abaixo.
 
-| # | O que falta | Por que trava o SEO |
-|---|---|---|
-| B1 | **Domínio real e definitivo** (`SITE_URL` hoje é `gabrielribeiropsi.com.br`, marcado como placeholder) | `canonical`, `og:url`, `sitemap` e todos os JSON-LD apontam pra esse domínio. Se o domínio final for outro, o Google indexa o errado. |
-| B2 | **Endereço do(s) consultório(s)** em Cabo Frio e São Pedro (rua, nº, bairro, CEP) — ou confirmação de que é *service-area business* (sem endereço público) | Busca local ("psicólogo em Cabo Frio") e o pacote de mapas do Google dependem de endereço + Google Business Profile. Hoje o schema só tem cidade/UF. |
-| B3 | **Google Business Profile** criado e verificado (categoria "Psicólogo") | É o maior fator isolado para o pacote local. Não é código. |
-| B4 | **Bio real da seção "Quem sou eu?"** (200–400 palavras) + **fotos reais** (retrato + consultório) | Conteúdo fino = página fraca. As fotos de cidade hoje são stock do Unsplash (barco, pôr do sol). |
-| B5 | **Conteúdo das "Rodas de conversa"** (formato, frequência, para quem) | Seção hoje é stub. |
-| B6 | **Telefone público** para exibir no site/schema (o WhatsApp `5522981114695` já está nos links) | `telephone` no schema `LocalBusiness`/`Person` aumenta confiança e habilita clique-para-ligar. Confirmar se pode ser público. |
-| B7 | **Horário de atendimento** real (dias/horas) | `openingHours` no schema. |
-| B8 | **Formação acadêmica** (instituição da graduação, ano, pós/especializações) | `Person.alumniOf`, `hasCredential`; reforça E-E-A-T (área médica/saúde, o Google é rígido — "Your Money or Your Life"). |
+| # | Item | Status | Como fica |
+|---|---|---|---|
+| B1 | Domínio definitivo | ⏳ **pendente** ("será definido ainda") | Fazer P0.1 (env var) já; o valor real entra na Vercel quando existir. Nada de canonical/OG/sitemap/JSON-LD deve ser dado como final antes disso. |
+| B2 | Endereço público | ✅ **não terá** | *Service-area business* confirmado. Schemas **sem** `address` de rua e **sem** `geo`; usar só `areaServed` (Brasil + Cabo Frio + São Pedro + "Região dos Lagos") e `addressRegion: "RJ"`. |
+| B3 | Google Business Profile | ⏳ pendente (não-código) | Criar como negócio de área de atendimento (endereço oculto). §4. |
+| B4 | Bio + fotos | ⚠️ **sem bio** · ✅ fotos reais já existem (`gab1.png`, `gab2.png`) | "Quem sou eu?" fica curta, sem bio longa. `Person.description` = 1–2 frases derivadas do texto já existente. Trocar as fotos stock das cidades por `gab2.png` / recortes reais (P1.2 / P2.1). |
+| B5 | Rodas de conversa | ⏳ pendente | Seção fica com a descrição genérica atual + TODO. |
+| B6 | Telefone | ✅ **resolvido** | `+55 22 98111-4695` (mesmo do WhatsApp) → `telephone` nos schemas. |
+| B7 | Horário | ✅ **com hora marcada** (agendado) | **Não** usar `openingHoursSpecification` (seria impreciso). Comunicar "atendimento com horário agendado" no texto + 1 item de FAQ. Opcional: `LocalBusiness` sem `openingHours`. |
+| B8 | Formação | ⚠️ só "Formado em Psicologia" | `hasCredential` = o CRP (`EducationalOccupationalCredential`). **Sem** `alumniOf` (não há instituição/ano). |
 
 ---
 
@@ -103,11 +103,14 @@ o Google usa para painel de conhecimento e busca local:
     { "@type": "Service", "name": "Rodas de conversa" }
   ],
   "founder": { "@id": "https://<dominio>/#person" },
-  "sameAs": ["https://www.instagram.com/gabrielribeiro_psi/"],
-  "openingHoursSpecification": [ /* B7 */ ]
+  "sameAs": ["https://www.instagram.com/gabrielribeiro_psi/"]
+  // B2: sem `address` de rua e sem `geo` (service-area business).
+  // B7: sem `openingHoursSpecification` — atendimento com hora marcada.
 }
 ```
 
+- `image` deve ser uma foto real do Gabriel (`gab1.png` ou `gab2.png`), não
+  um placeholder.
 - Dar `@id` ao `Person` (`#person`) e referenciar cruzado
   (`Person.worksFor` → `#business`, `business.founder` → `#person`).
 - **Verificação:** colar a URL no
@@ -118,10 +121,11 @@ o Google usa para painel de conhecimento e busca local:
 
 **Arquivo:** `app/page.tsx`
 
-Adicionar ao objeto atual: `@id`, `image` (retrato), `description`,
-`knowsAbout: ["Psicoterapia", "Abordagem Centrada na Pessoa", "Psicologia clínica", "Terapia para adolescentes"]`,
-`worksFor: { "@id": "#business" }`, e — quando B8 chegar — `alumniOf` e
-`hasCredential` (o CRP como `EducationalOccupationalCredential`).
+Adicionar ao objeto atual: `@id`, `image` (retrato real), `description`
+(1–2 frases, B4), `knowsAbout: ["Psicoterapia", "Abordagem Centrada na Pessoa", "Psicologia clínica", "Terapia para adolescentes"]`,
+`worksFor: { "@id": "#business" }`, `hasCredential` (o CRP como
+`EducationalOccupationalCredential`, `recognizedBy` = Conselho Federal de
+Psicologia). **Sem** `alumniOf` (B8: não há instituição/ano).
 
 #### P0.4 — `MedicalBusiness` das páginas de cidade: sair do mínimo
 
@@ -129,12 +133,14 @@ Adicionar ao objeto atual: `@id`, `image` (retrato), `description`,
 `app/psicologo-sao-pedro-da-aldeia/page.tsx` (usar o helper de
 `app/_lib/schema.ts`)
 
-Acrescentar ao schema de cada cidade: `@id`, `image`, `telephone`, `url`,
-`priceRange`, `areaServed` (a cidade + "Região dos Lagos"),
-`openingHoursSpecification`, `provider`/`founder` → `#person`, e
-`geo` (`latitude`/`longitude`) **se** B2 der endereço. Sem endereço, manter
-`address` só com `addressLocality`/`addressRegion` e marcar como
-service-area (`areaServed` + sem `address` completo).
+Acrescentar ao schema de cada cidade: `@id`, `image` (foto real),
+`telephone` (B6), `url`, `priceRange`, `areaServed` (a cidade + "Região dos
+Lagos"), `provider`/`founder` → `#person`.
+
+B2 (sem endereço) e B7 (hora marcada): **sem** `geo`, **sem**
+`openingHoursSpecification`. `address` só com `addressRegion: "RJ"` (sem
+`addressLocality` de rua) ou omitir `address` e ficar só com `areaServed` —
+o Google aceita service-area business. Não inventar endereço.
 
 #### P0.5 — `BreadcrumbList` nas páginas de cidade
 
@@ -200,13 +206,16 @@ Hoje Cabo Frio e São Pedro compartilham **7 de 8 seções idênticas**
 (TherapySection, ApproachSection, HowItWorks, Presencial, FAQ, Cta). Risco
 de o Google tratar como *doorway pages* finas.
 
-Adicionar por cidade:
-- 1–2 parágrafos únicos ("Atendimento em Cabo Frio: bairros X, Y, Z; perto
-  de tal referência; como funciona o presencial aqui").
-- 1–2 itens de FAQ específicos da cidade (ex.: "Onde fica o consultório em
-  São Pedro da Aldeia?").
-- `alt` e (idealmente) foto real do consultório/cidade no lugar do stock.
-- Meta description única já existe — reforçar com bairro/referência.
+Como não há endereço público (B2), o diferencial não pode ser "onde fica" —
+tem que ser conteúdo editorial único por cidade:
+- 1–2 parágrafos únicos por cidade (contexto local: "atendimento presencial
+  com hora marcada em Cabo Frio / São Pedro da Aldeia; combinamos o local
+  no agendamento"; características do público local; deslocamento).
+- 1–2 itens de FAQ específicos ("O atendimento presencial em São Pedro da
+  Aldeia é com hora marcada?" etc.).
+- Trocar a imagem stock do Unsplash por `gab2.png` ou outro recorte real
+  (B4: fotos reais existem).
+- Meta description única já existe — só reforçar com termo local.
 
 #### P1.3 — Trabalhar as palavras-chave no corpo
 
@@ -218,10 +227,15 @@ Centrada na Pessoa". Hoje "psicoterapia" e "adolescentes" aparecem;
 "terapia online" e "Região dos Lagos" aparecem pouco na home (mais nas
 cidades). Ajustar 2–3 frases sem forçar.
 
-#### P1.4 — Seção "Quem sou eu?" com conteúdo real (B4)
+#### P1.4 — Seção "Quem sou eu?" — conteúdo mínimo (B4: sem bio)
 
-Bio de 200–400 palavras com E-E-A-T: formação, tempo de atuação, para quem
-atende, como conduz. Adicionar `Person.description` = resumo dessa bio.
+O Gabriel não vai mandar bio. Então: manter a seção **curta e honesta** —
+1–2 parágrafos com o que já se sabe (psicólogo, CRP, formado em Psicologia,
+atende adolescentes e adultos, ACP, online + Região dos Lagos com hora
+marcada) e as **fotos reais** (`gab2.png`) para dar rosto e prova. Sem
+"lorem", sem "em breve mais sobre mim". `Person.description` = uma frase
+resumo. Se a seção continuar magra demais, avaliar **fundir "Quem sou eu?"
+com "Abordagem"** numa seção só ("Quem sou eu e como trabalho").
 
 #### P1.5 — FAQ: cobrir as novas dúvidas
 
@@ -233,6 +247,7 @@ Acrescentar perguntas long-tail alinhadas à nova estrutura:
 - "Como funcionam as rodas de conversa?"
 - "Qual o valor da sessão?" (se puder divulgar)
 - "Você atende presencialmente em qual cidade da Região dos Lagos?"
+- "Como funciona o agendamento? / O atendimento é com hora marcada?" (B7)
 
 Cada uma entra no `FAQPage` schema automaticamente.
 
@@ -243,9 +258,9 @@ Cada uma entra no `FAQPage` schema automaticamente.
 **Arquivos:** `next.config.ts`, `constants.ts`, `/public`
 
 Baixar as imagens usadas (heros de cidade, `presencial`), otimizar
-(WebP/AVIF, ~1600px), colocar em `/public/cidades/…`, remover o
-`remotePatterns` do Unsplash. Menos DNS/handshake, controle de cache,
-LCP melhor. Substituir pelas fotos reais quando B4 chegar.
+(WebP/AVIF, ~1600px), colocar em `/public/…`, remover o `remotePatterns`
+do Unsplash. Menos DNS/handshake, controle de cache, LCP melhor. Onde fizer
+sentido, usar `gab2.png` (foto real, B4) no lugar do stock.
 
 #### P2.2 — Otimizar `gab1.png` (839 KB)
 
@@ -286,9 +301,12 @@ Sem isso, "implementar completamente as informações no Google" não fecha:
 1. **Google Search Console** — verificar a propriedade (via DNS TXT ou meta
    `google-site-verification` em `app/layout.tsx` `metadata.verification`),
    enviar `sitemap.xml`, acompanhar Cobertura/Rich Results.
-2. **Google Business Profile** — criar, categoria "Psicólogo", endereço ou
-   área de atendimento, telefone (= WhatsApp), horário, fotos, link do
-   site. Pedir avaliações aos pacientes (com consentimento).
+2. **Google Business Profile** — criar como **negócio de área de
+   atendimento** (marcar "atendo clientes no endereço deles" / ocultar
+   endereço, já que não há consultório público — B2). Categoria "Psicólogo",
+   área = Cabo Frio + São Pedro da Aldeia + Região dos Lagos, telefone
+   (= WhatsApp, B6), fotos reais, link do site, "atendimento com hora
+   marcada". Pedir avaliações aos pacientes (com consentimento).
 3. **Bing Webmaster Tools** — importar do GSC (2 min).
 4. **Consistência NAP** (Nome / Endereço / Telefone) idêntica em: site,
    GBP, Instagram, e diretórios.
@@ -301,14 +319,17 @@ Sem isso, "implementar completamente as informações no Google" não fecha:
 
 ## 5. Ordem de execução sugerida
 
-1. **Confirmar B1 (domínio)** → P0.1. Nada mais faz sentido antes disso.
-2. `app/_lib/schema.ts` + P0.2 / P0.3 / P0.4 / P0.5 (dados estruturados) —
-   maior impacto/esforço, sem depender de conteúdo novo.
-3. P0.6 / P0.7 / P0.8 (OG, sitemap, robots).
-4. P1.1 / P1.3 / P1.5 (on-page que não depende do Gabriel).
-5. P2.1–P2.6 (performance).
-6. Quando o Gabriel enviar B2/B4/B5/B7/B8: P1.2, P1.4, e completar os
-   schemas com endereço/geo/horário/formação.
+1. **P0.1** (env var) agora — o valor do domínio entra na Vercel quando B1
+   fechar; até lá nada que dependa do domínio final vai pra produção.
+2. `app/_lib/schema.ts` + **P0.2 / P0.3 / P0.4 / P0.5** — já dá pra fazer
+   completo: telefone (B6) resolvido, service-area (B2) definido, sem
+   `openingHours` (B7), `hasCredential` só com CRP (B8).
+3. **P0.6 / P0.7 / P0.8** (OG com rosto, sitemap, robots).
+4. **P1.1 / P1.2 / P1.3 / P1.4 / P1.5** — nenhum depende mais do Gabriel
+   (bio não vem, fotos existem). P1.2/P1.4 com o conteúdo mínimo possível.
+5. **P2.1–P2.6** (performance).
+6. Só fica pendente de terceiros: B1 (domínio) e a §4 (Search Console +
+   Business Profile).
 7. Em paralelo (não-código): §4 — Search Console + Business Profile.
 
 ## 6. Verificação global (ao final de cada bloco)
