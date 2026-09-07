@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { AtSign, Mail, MessageCircle } from "lucide-react";
+import { AtSign, Mail } from "lucide-react";
+import { WhatsappIcon } from "@/app/_components/shared/whatsapp-icon";
 import { buildWhatsAppLink } from "@/app/_lib/whatsapp";
 import { PSYCHOLOGIST } from "@/app/_lib/constants";
 
@@ -68,7 +69,7 @@ export function Footer() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 transition-colors hover:text-dark-brown-foreground"
           >
-            <MessageCircle className="size-4" />
+            <WhatsappIcon className="size-4" />
             WhatsApp
           </a>
           <a

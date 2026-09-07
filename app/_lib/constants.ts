@@ -119,7 +119,7 @@ export const THERAPY_COPY = {
 // TODO: revisar/ajustar com o Gabriel.
 export const APPROACH = {
   name: "Abordagem Centrada na Pessoa",
-  lead: "Trabalho na Abordagem Centrada na Pessoa. Ela parte de uma confiança: a de que cada pessoa tem, dentro de si, a direção do próprio crescimento — e que o meu papel é ajudar a criar as condições pra isso acontecer.",
+  lead: "Trabalho na Abordagem Centrada na Pessoa. Ela parte de uma confiança: a de que cada pessoa tem, dentro de si, a direção do próprio crescimento, e o meu papel é ajudar a criar as condições pra isso acontecer.",
   points: [
     {
       term: "Você conduz",
@@ -135,7 +135,7 @@ export const APPROACH = {
     },
     {
       term: "Autenticidade",
-      text: "Uma relação real, sem encenação — porque é na relação que a terapia acontece.",
+      text: "Uma relação real, sem encenação. É na relação que a terapia acontece.",
     },
   ],
 } as const;
@@ -164,6 +164,6 @@ export const FAQ_ITEMS = [
   {
     question: "Posso fazer terapia presencial e depois migrar para online (ou vice-versa)?",
     answer:
-      "Sim. Muitos pacientes alternam entre os dois formatos conforme a rotina muda — o acompanhamento continua o mesmo.",
+      "Sim. Muitos pacientes alternam entre os dois formatos conforme a rotina muda, e o acompanhamento continua o mesmo.",
   },
 ] as const;
