@@ -72,11 +72,32 @@ export const IMAGES = {
 } as const;
 
 export const NAV_LINKS = [
+  { href: "/#inicio", label: "Início" },
   { href: "/#sobre", label: "Sobre" },
+  { href: "/#servicos", label: "Serviços" },
   { href: "/#como-funciona", label: "Como funciona" },
-  { href: "#servicos", label: "Serviços" },
-  { href: "#faq", label: "Perguntas frequentes" },
-  { href: "#contato", label: "Contato" },
+  { href: "/#contato", label: "Contato" },
+] as const;
+
+// Pilares da clínica do Gabriel — seção "Abordagens" (layout editorial
+// alternado, no lugar das escolas teóricas da referência).
+export const CLINIC_PRINCIPLES = [
+  {
+    term: "Escuta ativa",
+    text: "Te escuto sem pressa e sem julgamento, atento ao detalhe do que você traz.",
+  },
+  {
+    term: "Acolhimento",
+    text: "Um espaço seguro pra falar do que pesa, sem medo de ser avaliado.",
+  },
+  {
+    term: "Vínculo e confiança",
+    text: "A terapia acontece na relação — construímos isso com cuidado, sessão após sessão.",
+  },
+  {
+    term: "No seu ritmo",
+    text: "Cada processo tem seu tempo. Revemos juntos para onde caminhar.",
+  },
 ] as const;
 
 export const FAQ_ITEMS = [
