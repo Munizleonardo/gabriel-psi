@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { JsonLd } from "@/app/_components/shared/json-ld";
 import { AboutSection } from "@/app/_components/sections/about-section";
 import { ApproachSection } from "@/app/_components/sections/approach-section";
-import { ContactSection } from "@/app/_components/sections/contact-section";
+import { CtaSection } from "@/app/_components/sections/cta-section";
 import { FaqSection } from "@/app/_components/sections/faq-section";
 import { HeroSection } from "@/app/_components/sections/hero-section";
 import { HowItWorksSection } from "@/app/_components/sections/how-it-works-section";
@@ -39,7 +39,7 @@ export default function Home() {
       <HowItWorksSection />
       <PresencialSection />
       <FaqSection />
-      <ContactSection />
+      <CtaSection />
     </>
   );
 }

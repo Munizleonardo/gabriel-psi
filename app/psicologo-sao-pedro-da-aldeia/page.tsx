@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/app/_components/shared/json-ld";
-import { ContactSection } from "@/app/_components/sections/contact-section";
+import { CtaSection } from "@/app/_components/sections/cta-section";
 import { FaqSection } from "@/app/_components/sections/faq-section";
 import { HowItWorksSection } from "@/app/_components/sections/how-it-works-section";
 import { LocationHeroSection } from "@/app/_components/sections/location-hero-section";
@@ -39,7 +39,7 @@ export default function PsicologoSaoPedroDaAldeiaPage() {
       <HowItWorksSection />
       <PresencialSection />
       <FaqSection />
-      <ContactSection />
+      <CtaSection />
     </>
   );
 }
