@@ -10,8 +10,7 @@ export const PSYCHOLOGIST = {
   whatsappNumber: "5500000000000",
   // SUBSTITUA pelo e-mail real que vai receber os contatos do formulário
   email: "contato@gabrielribeiropsi.com.br",
-  // SUBSTITUA por uma URL (ou import estático) da foto real do Gabriel quando ele enviar
-  photoUrl: null as string | null,
+  photoUrl: "/gab1.png" as string | null,
 };
 
 // Destino inicial dos e-mails do formulário de contato, enquanto a conta
