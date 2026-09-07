@@ -4,33 +4,38 @@
 :root {
   --radius: 0.75rem;
 
-  --background: #f7f5f0;
-  --foreground: #33403a;
+  --background: #f0e7c2;
+  --foreground: #2d120d;
 
-  --card: #ffffff;
-  --card-foreground: #33403a;
+  --card: #fbf8ee;
+  --card-foreground: #2d120d;
 
-  --popover: #ffffff;
-  --popover-foreground: #33403a;
+  --popover: #fbf8ee;
+  --popover-foreground: #2d120d;
 
-  --primary: #7c9473;
-  --primary-foreground: #f7f5f0;
+  --primary: #3b0014;
+  --primary-foreground: #f0e7c2;
 
-  --secondary: #efeae0;
-  --secondary-foreground: #33403a;
+  --secondary: #e7dbb4;
+  --secondary-foreground: #2d120d;
 
-  --muted: #efeae0;
-  --muted-foreground: #6b7a70;
+  --muted: #e7dbb4;
+  --muted-foreground: #586448;
 
-  --accent: #c1694f;
-  --accent-foreground: #f7f5f0;
+  --accent: #954130;
+  --accent-foreground: #f0e7c2;
 
-  --destructive: #b3432b;
-  --destructive-foreground: #f7f5f0;
+  --destructive: #8a2f17;
+  --destructive-foreground: #f0e7c2;
 
-  --border: #e3ded2;
-  --input: #e3ded2;
-  --ring: #7c9473;
+  --border: #d8cb9e;
+  --input: #d8cb9e;
+  --ring: #3b0014;
+
+  /* Superfícies de contraste (seções escuras: footer, faixa do Instagram,
+     botão flutuante de WhatsApp) — Verde Secundário da paleta. */
+  --dark: #00291c;
+  --dark-foreground: #f0e7c2;
 }
 
 @theme inline {
@@ -53,6 +58,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-dark: var(--dark);
+  --color-dark-foreground: var(--dark-foreground);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
