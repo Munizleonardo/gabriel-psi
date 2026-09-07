@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { DM_Sans, Fraunces } from "next/font/google";
+import { FloatingActions } from "@/app/_components/layout/floating-actions";
 import { Footer } from "@/app/_components/layout/footer";
 import { Navbar } from "@/app/_components/layout/navbar";
-import { WhatsappFloatButton } from "@/app/_components/layout/whatsapp-float-button";
 import { Toaster } from "@/app/_components/ui/sonner";
 import { PSYCHOLOGIST, SITE_URL } from "@/app/_lib/constants";
 import "./globals.css";
@@ -40,7 +40,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Navbar />
         <main className="flex flex-1 flex-col">{children}</main>
         <Footer />
-        <WhatsappFloatButton />
+        <FloatingActions />
         <Toaster />
       </body>
     </html>

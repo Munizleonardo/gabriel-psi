@@ -18,18 +18,18 @@ export function HeroPortrait() {
         };
 
   return (
-    <div className="relative mx-auto aspect-square w-full max-w-sm">
+    <div className="relative aspect-square w-48 sm:w-56">
       <motion.div
         aria-hidden="true"
-        className="absolute -right-6 -top-6 -z-10 size-44 bg-accent sm:size-56"
+        className="absolute -right-4 -top-4 -z-10 size-28 bg-accent sm:size-36"
         style={{ borderRadius: BLOB_1 }}
-        {...float(9, -14)}
+        {...float(9, -12)}
       />
       <motion.div
         aria-hidden="true"
-        className="absolute -bottom-8 -left-8 -z-10 size-32 bg-secondary sm:size-40"
+        className="absolute -bottom-5 -left-5 -z-10 size-20 bg-secondary sm:size-24"
         style={{ borderRadius: BLOB_2 }}
-        {...float(11, 12)}
+        {...float(11, 10)}
       />
       <div className="absolute inset-0 overflow-hidden rounded-full ring-1 ring-dark-brown-foreground/10">
         <Image
@@ -38,7 +38,7 @@ export function HeroPortrait() {
           fill
           priority
           className="object-cover"
-          sizes="(min-width: 768px) 24rem, 80vw"
+          sizes="(min-width: 640px) 14rem, 12rem"
         />
       </div>
     </div>
