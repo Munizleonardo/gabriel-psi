@@ -28,7 +28,7 @@ export function AboutSection() {
             className="overflow-hidden rounded-2xl border border-border bg-background"
           >
             <Image
-              src="/img.jpeg"
+              src="/img-2.JPG"
               alt="Colagem “gosto de” do Gabriel com filmes, músicas, jogos, livros e outras histórias que o marcam"
               width={1122}
               height={1402}
