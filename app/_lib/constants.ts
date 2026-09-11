@@ -124,7 +124,11 @@ export const ABOUT_TABS = {
   outside: {
     label: "Do lado de fora",
     paragraphs: [
-      "Fora do consultório, sou feito das histórias que me marcam: filmes, música, jogos, livros, pessoas, momentos. Um pouco disso está aqui do lado.",
+      "Pra além de psicólogo, sou pai, esposo, curioso e um músico meia-boca. Adoro matemática e física, mesmo sendo de humanas.",
+      "Amo literatura e, quando tenho tempo, escrevo contos e histórias de ficção. Em breve (um dia) eu conto mais sobre isso.",
+      "Gosto de música, cinema, jogos, futebol, histórias boas e de entender por que as pessoas fazem o que fazem. Acho que boa parte da minha curiosidade pela psicologia vem daí também. Pessoas são complicadas, contraditórias, mudam de ideia, fazem escolhas estranhas e nem sempre conseguem explicar direito o que estão vivendo.",
+      "Talvez por isso eu tenha pouca paciência com respostas prontas sobre gente.",
+      "No consultório, essa curiosidade continua comigo. Não no sentido de tentar decifrar quem está na minha frente, mas de conhecer aquela pessoa de verdade, no tempo dela, sem partir do pressuposto de que eu já sei quem ela é.",
     ],
   },
   psychology: {
