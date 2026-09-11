@@ -84,7 +84,11 @@ export function TherapySection() {
           })}
         </div>
 
-        <AnimatedReveal key={audience} className="mt-10 flex flex-col gap-5 text-muted-foreground">
+        <AnimatedReveal
+          key={audience}
+          onView={false}
+          className="mt-10 flex flex-col gap-5 text-muted-foreground"
+        >
           <h3 className="font-heading text-2xl font-medium text-foreground">{copy.heading}</h3>
           {copy.paragraphs.map((text) => (
             <Paragraph key={text.slice(0, 24)} text={text} />
