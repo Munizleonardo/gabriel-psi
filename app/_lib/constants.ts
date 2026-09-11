@@ -143,7 +143,7 @@ export const PSYCHOLOGY_REFERENCES = {
   title: "Gente que me ajuda a pensar ",
   titleEmphasis: "gente",
   intro:
-    "Minha prática não cabe inteira dentro de uma única teoria. Algumas pessoas mudaram profundamente a maneira como eu entendo sofrimento, vínculo, liberdade, desenvolvimento e aquilo que acontece quando duas pessoas realmente conseguem se encontrar.",
+    "Minha prática clínica tem um lugar bem definido, que é a Abordagem Centrada na Pessoa. Mas meu jeito de compreender cuidado, sofrimento e desenvolvimento foi construído ouvindo muitas vozes. Algumas vieram da psicologia; outras, da filosofia, da enfermagem, da saúde mental e de outros lugares. São pessoas que ampliaram meu jeito de olhar para gente e continuam me ajudando a pensar o que significa cuidar de alguém.",
   quote: "Talvez o mais importante seja nunca deixar de fazer perguntas.",
   footerLeft: "Pessoas. Histórias. Mundos reais.",
   footerRight: "É sobre encontros.",

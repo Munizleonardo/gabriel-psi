@@ -27,7 +27,7 @@ const OPTIONS: { key: Tab; label: string; active: string; idle: string }[] = [
 ];
 
 export function AboutSection() {
-  const [tab, setTab] = useState<Tab>("outside");
+  const [tab, setTab] = useState<Tab>("psychology");
   const isOutside = tab === "outside";
 
   const topRef = useRef<HTMLDivElement>(null);
