@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/app/_components/shared/json-ld";
-import { ApproachSection } from "@/app/_components/sections/approach-section";
 import { CtaSection } from "@/app/_components/sections/cta-section";
 import { FaqSection } from "@/app/_components/sections/faq-section";
 import { HowItWorksSection } from "@/app/_components/sections/how-it-works-section";
@@ -39,7 +38,6 @@ export default function PsicologoCaboFrioPage() {
       <LocationHeroSection city={city} />
       <TherapySection />
       <ServicesSection city={city} />
-      <ApproachSection />
       <HowItWorksSection />
       <PresencialSection />
       <FaqSection />

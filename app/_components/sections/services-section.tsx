@@ -13,14 +13,24 @@ export function ServicesSection({ city }: ServicesSectionProps) {
 
   const services = [
     {
-      title: "Psicoterapia individual",
-      description: `Para adolescentes e adultos. Sessões online, de qualquer lugar do Brasil, ou presenciais em ${local}, na Região dos Lagos (RJ).`,
+      title: "Psicoterapia individual presencial",
+      description: `Para adolescentes e adultos, com horário agendado, no consultório em ${local}, na Região dos Lagos (RJ).`,
     },
     {
-      title: "Rodas de conversa",
+      title: "Psicoterapia individual online",
       description:
-        "Encontros em grupo para pensar junto temas do dia a dia, num espaço de escuta e troca. Turmas e datas divulgadas conforme a agenda.",
+        "Mesmo formato e duração da sessão presencial, por videochamada, para quem mora em qualquer lugar do Brasil.",
+    },
+    {
+      title: "Rodas de conversa presenciais",
+      description: `Encontros em grupo para pensar junto temas do dia a dia, num espaço de escuta e troca, em ${local}.`,
       /* TODO: detalhes das rodas (formato, frequência, valores) quando o Gabriel definir. */
+    },
+    {
+      title: "Atividades em grupo",
+      description:
+        "Vivências pensadas para empresas e equipes, com foco em saúde mental e convivência no ambiente de trabalho.",
+      /* TODO: detalhes das atividades em grupo quando o Gabriel definir. */
     },
   ] as const;
 

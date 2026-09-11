@@ -115,29 +115,25 @@ export const THERAPY_COPY = {
   },
 } as const;
 
-// Seção "Abordagem" — Abordagem Centrada na Pessoa (Carl Rogers).
-// TODO: revisar/ajustar com o Gabriel.
-export const APPROACH = {
-  name: "Abordagem Centrada na Pessoa",
-  lead: "Trabalho na Abordagem Centrada na Pessoa. Ela parte de uma confiança: a de que cada pessoa tem, dentro de si, a direção do próprio crescimento, e o meu papel é ajudar a criar as condições pra isso acontecer.",
-  points: [
-    {
-      term: "Você conduz",
-      text: "Não decido por você o que precisa mudar. Caminho junto enquanto você entende o que sente e escolhe o que fazer com isso.",
-    },
-    {
-      term: "Empatia",
-      text: "Tento ver o mundo a partir do seu ponto de vista, sem julgar, pra entender o que as coisas significam pra você.",
-    },
-    {
-      term: "Aceitação",
-      text: "Um espaço em que você pode falar do que pesa sem medo de ser avaliado ou reduzido a um diagnóstico.",
-    },
-    {
-      term: "Autenticidade",
-      text: "Uma relação real, sem encenação. É na relação que a terapia acontece.",
-    },
-  ],
+// Seção "Quem sou eu?" — duas abas: vida fora do consultório e jeito de
+// trabalhar como psicólogo. Cada aba é exibida como um par de "bolas",
+// no mesmo padrão da seção "A proposta".
+// TODO: textos da aba "psychology" são placeholder — Gabriel vai mandar a
+// versão definitiva (substituindo a antiga "Abordagem Centrada na Pessoa").
+export const ABOUT_TABS = {
+  outside: {
+    label: "Do lado de fora",
+    paragraphs: [
+      "Fora do consultório, sou feito das histórias que me marcam: filmes, música, jogos, livros, pessoas, momentos. Um pouco disso está aqui do lado.",
+    ],
+  },
+  psychology: {
+    label: "Na psicologia",
+    paragraphs: [
+      "No consultório, parto de uma ideia central: você é quem conduz o processo. Não chego com diagnósticos prontos nem com respostas prontas — a gente constrói junto o entendimento sobre o que faz sentido pra sua vida, no seu ritmo.",
+      "Isso significa uma escuta sem julgamento, focada em entender o mundo a partir do seu ponto de vista, e um espaço em que você pode falar do que pesa sem medo de ser reduzido a um rótulo ou a um diagnóstico.",
+    ],
+  },
 } as const;
 
 export const FAQ_ITEMS = [
