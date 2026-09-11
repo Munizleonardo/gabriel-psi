@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { cn } from "cn";
+import { ReferencesCollage } from "@/app/_components/sections/references-collage";
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
 import { SectionHeading } from "@/app/_components/shared/section-heading";
 import { ABOUT_TABS, CITIES, PSYCHOLOGIST } from "@/app/_lib/constants";
@@ -93,16 +94,14 @@ export function AboutSection() {
             </AnimatedReveal>
           </div>
         ) : (
-          <AnimatedReveal className="mt-10 flex max-w-2xl flex-col gap-4 text-muted-foreground">
-            <p>
+          <AnimatedReveal className="mt-10 flex flex-col gap-8">
+            <p className="max-w-2xl text-muted-foreground">
               Sou {PSYCHOLOGIST.name}, psicólogo (CRP {PSYCHOLOGIST.crp}), formado em Psicologia.
               Atendo adolescentes e adultos, online para todo o Brasil e presencialmente em{" "}
               {CITIES.caboFrio.name} e {CITIES.saoPedroDaAldeia.name}, na Região dos Lagos (RJ),
               com horário agendado.
             </p>
-            {ABOUT_TABS.psychology.paragraphs.map((text) => (
-              <p key={text.slice(0, 24)}>{text}</p>
-            ))}
+            <ReferencesCollage />
           </AnimatedReveal>
         )}
 
