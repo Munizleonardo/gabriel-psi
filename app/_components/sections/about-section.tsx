@@ -73,13 +73,14 @@ export function AboutSection() {
 
         {isOutside ? (
           <div className="mt-10 grid gap-10 md:grid-cols-[1fr_0.8fr] md:items-center md:gap-14">
-            <AnimatedReveal className="flex flex-col gap-4 text-muted-foreground">
+            <AnimatedReveal onView={false} className="flex flex-col gap-4 text-muted-foreground">
               {ABOUT_TABS.outside.paragraphs.map((text) => (
                 <p key={text.slice(0, 24)}>{text}</p>
               ))}
             </AnimatedReveal>
 
             <AnimatedReveal
+              onView={false}
               delay={0.1}
               className="overflow-hidden rounded-2xl border border-border bg-background"
             >
@@ -94,7 +95,7 @@ export function AboutSection() {
             </AnimatedReveal>
           </div>
         ) : (
-          <AnimatedReveal className="mt-10 flex flex-col gap-8">
+          <AnimatedReveal onView={false} className="mt-10 flex flex-col gap-8">
             <p className="max-w-2xl text-muted-foreground">
               Sou {PSYCHOLOGIST.name}, psicólogo (CRP {PSYCHOLOGIST.crp}), formado em Psicologia.
               Atendo adolescentes e adultos, online para todo o Brasil e presencialmente em{" "}

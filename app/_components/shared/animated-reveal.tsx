@@ -12,6 +12,13 @@ type AnimatedRevealProps = {
   /** Deslocamento vertical inicial, em px. */
   y?: number;
   as?: MotionTag;
+  /**
+   * Se true (padrão), só anima quando entra na viewport ao rolar a página.
+   * Use false para conteúdo que troca por interação (ex.: abas) e precisa
+   * aparecer na hora, sem depender de rolagem — por exemplo quando o
+   * conteúdo trocado é mais alto que a viewport atual.
+   */
+  onView?: boolean;
 };
 
 export function AnimatedReveal({
@@ -20,6 +27,7 @@ export function AnimatedReveal({
   delay = 0,
   y = 24,
   as = "div",
+  onView = true,
 }: AnimatedRevealProps) {
   const reduced = useReducedMotion();
 
@@ -35,15 +43,18 @@ export function AnimatedReveal({
     return <Plain className={className}>{children}</Plain>;
   }
 
+  const trigger = onView
+    ? { whileInView: "visible", viewport: { once: true, amount: 0.2 } }
+    : { animate: "visible" };
+
   return (
     <Tag
       data-reveal=""
       className={className}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       variants={variants}
+      {...trigger}
     >
       {children}
     </Tag>
