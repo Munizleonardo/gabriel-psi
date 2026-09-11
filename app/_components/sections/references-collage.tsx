@@ -73,7 +73,12 @@ function ReferenceCard({ person, index }: { person: Person; index: number }) {
   const photoFirst = person.photoSide === "left";
 
   return (
-    <article className="flex flex-col gap-2 sm:gap-3">
+    <article
+      className={cn(
+        "flex flex-col gap-2 rounded-xl border border-border/70 bg-card/50 p-3",
+        "sm:gap-3 sm:rounded-none sm:border-0 sm:bg-transparent sm:p-0"
+      )}
+    >
       <div className="flex flex-row gap-3 sm:gap-5">
         <div className={photoFirst ? "order-1" : "order-2"}>
           <PhotoBlock person={person} index={index} />
@@ -91,7 +96,9 @@ function ReferenceCard({ person, index }: { person: Person; index: number }) {
       </div>
       {/* Nome/cargo ficam sempre à esquerda do card, como na peça de referência
           (embaixo do texto quando a foto está à direita; embaixo da foto quando
-          a foto está à esquerda, caso do Winnicott). */}
+          a foto está à esquerda, caso do Winnicott). No mobile o card ganha borda
+          própria para deixar claro que nome pertence à foto de cima, não à
+          próxima — empilhado, sem isso, os dois se confundiam. */}
       <div>
         <p className="font-heading text-lg text-primary">{person.name}</p>
         <p className="text-xs text-muted-foreground">{person.role}</p>
