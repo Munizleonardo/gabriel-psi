@@ -7,7 +7,7 @@ import { cn } from "cn";
 import { ReferencesCollage } from "@/app/_components/sections/references-collage";
 import { AnimatedReveal } from "@/app/_components/shared/animated-reveal";
 import { SectionHeading } from "@/app/_components/shared/section-heading";
-import { ABOUT_TABS, CITIES, PSYCHOLOGIST } from "@/app/_lib/constants";
+import { ABOUT_TABS } from "@/app/_lib/constants";
 
 type Tab = "outside" | "psychology";
 
@@ -96,12 +96,6 @@ export function AboutSection() {
           </div>
         ) : (
           <AnimatedReveal onView={false} className="mt-10 flex flex-col gap-8">
-            <p className="max-w-2xl text-muted-foreground">
-              Sou {PSYCHOLOGIST.name}, psicólogo (CRP {PSYCHOLOGIST.crp}), formado em Psicologia.
-              Atendo adolescentes e adultos, online para todo o Brasil e presencialmente em{" "}
-              {CITIES.caboFrio.name} e {CITIES.saoPedroDaAldeia.name}, na Região dos Lagos (RJ),
-              com horário agendado.
-            </p>
             <ReferencesCollage />
           </AnimatedReveal>
         )}
