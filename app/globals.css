@@ -116,6 +116,57 @@ body {
   }
 }
 
+/* Textura exclusiva do Hero: imagem de fundo (SVG vetorial, local, com
+   formas orgânicas no tom da paleta) bem transparente, mais brilho quente
+   nos cantos, grão fino, textura em diagonal sutil e um glow lento e
+   discreto — tudo para dar profundidade sem competir com a foto.
+   Sem imagem externa (CSP/perf): SVGs inline ou locais em /public. */
+.hero-surface-texture {
+  position: relative;
+  isolation: isolate;
+}
+
+.hero-surface-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-blend-mode: overlay, overlay, overlay, overlay, overlay, normal;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat, repeat, no-repeat;
+  background-size: auto, auto, auto, auto, 140px 140px, cover;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0, center;
+  background-image:
+    radial-gradient(65% 70% at 12% -15%, rgb(149 65 48 / 0.4), transparent 60%),
+    radial-gradient(60% 70% at 105% 115%, rgb(0 0 0 / 0.4), transparent 65%),
+    radial-gradient(90% 60% at 50% 100%, rgb(231 219 180 / 0.08), transparent 70%),
+    repeating-linear-gradient(135deg, rgb(255 255 255 / 0.025) 0px, rgb(255 255 255 / 0.025) 1px, transparent 1px, transparent 7px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E"),
+    url("/hero-pattern.svg");
+}
+
+.hero-surface-texture::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.65;
+  background: radial-gradient(38% 46% at 82% 12%, rgb(149 65 48 / 0.55), transparent 70%);
+  animation: hero-glow-drift 18s ease-in-out infinite;
+}
+
+@keyframes hero-glow-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5%, 5%) scale(1.18); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-surface-texture::after {
+    animation: none;
+  }
+}
+
 /* Textura sutil para as seções escuras (Hero, faixa de CTA).
    Gradientes + grão SVG inline — sem imagem externa (CSP). */
 .surface-texture {

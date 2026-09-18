@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="surface-texture relative isolate overflow-hidden bg-dark-brown text-dark-brown-foreground"
+      className="hero-surface-texture relative isolate overflow-hidden bg-dark-brown text-dark-brown-foreground"
     >
       <div className="mx-auto flex max-w-2xl flex-col items-center gap-8 px-6 py-20 text-center sm:py-28 lg:py-32">
         <AnimatedReveal>
