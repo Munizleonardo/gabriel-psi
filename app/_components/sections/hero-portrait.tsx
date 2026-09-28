@@ -33,11 +33,11 @@ export function HeroPortrait() {
       />
       <div className="absolute inset-0 overflow-hidden rounded-full ring-1 ring-dark-brown-foreground/10">
         <Image
-          src={PSYCHOLOGIST.photoUrl ?? "/gab1.png"}
+          src={PSYCHOLOGIST.photoUrl ?? "/img-gabriel.jpeg"}
           alt={`${PSYCHOLOGIST.name}, psicólogo`}
           fill
           priority
-          className="object-cover"
+          className="object-cover object-[50%_30%]"
           sizes="(min-width: 640px) 14rem, 12rem"
         />
       </div>
