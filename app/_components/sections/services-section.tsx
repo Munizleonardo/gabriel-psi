@@ -8,13 +8,13 @@ type ServicesSectionProps = {
 
 export function ServicesSection({ city }: ServicesSectionProps) {
   const local = city
-    ? `${city.name} (${city.state})`
-    : `${CITIES.caboFrio.name} e ${CITIES.saoPedroDaAldeia.name}`;
+    ? `${city.name} - ${city.state}`
+    : `${CITIES.saoPedroDaAldeia.name} - ${CITIES.saoPedroDaAldeia.state} e ${CITIES.caboFrio.name} - ${CITIES.caboFrio.state}`;
 
   const services = [
     {
       title: "Psicoterapia individual presencial",
-      description: `Para adolescentes e adultos, com horário agendado, no consultório em ${local}, na Região dos Lagos (RJ).`,
+      description: `Para adolescentes e adultos, com horário agendado, no consultório em ${local}.`,
     },
     {
       title: "Psicoterapia individual online",

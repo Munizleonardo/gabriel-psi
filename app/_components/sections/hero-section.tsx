@@ -21,6 +21,13 @@ export function HeroSection() {
           <p className="text-lg text-dark-brown-foreground/80">
             Psicólogo · CRP {PSYCHOLOGIST.crp}
           </p>
+          <p className="mt-1 font-heading text-xl sm:text-2xl">
+            Psicoterapia para adolescentes e adultos
+          </p>
+          <p className="text-base text-dark-brown-foreground/70 sm:text-lg">
+            São Pedro da Aldeia | Cabo Frio • Presencial
+          </p>
+          <p className="text-base font-medium sm:text-lg">Todo o Brasil • Online</p>
         </AnimatedReveal>
 
         <AnimatedReveal delay={0.25}>
