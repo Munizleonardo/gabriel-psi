@@ -25,7 +25,7 @@ export function HeroSection() {
             Psicoterapia para adolescentes e adultos
           </p>
           <p className="text-base text-dark-brown-foreground/70 sm:text-lg">
-            São Pedro da Aldeia | Cabo Frio • Presencial
+            São Pedro da Aldeia • Presencial
           </p>
           <p className="text-base font-medium sm:text-lg">Todo o Brasil • Online</p>
         </AnimatedReveal>

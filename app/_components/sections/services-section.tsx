@@ -9,7 +9,7 @@ type ServicesSectionProps = {
 export function ServicesSection({ city }: ServicesSectionProps) {
   const local = city
     ? `${city.name} - ${city.state}`
-    : `${CITIES.saoPedroDaAldeia.name} - ${CITIES.saoPedroDaAldeia.state} e ${CITIES.caboFrio.name} - ${CITIES.caboFrio.state}`;
+    : `${CITIES.saoPedroDaAldeia.name} - ${CITIES.saoPedroDaAldeia.state}`;
 
   const services = [
     {

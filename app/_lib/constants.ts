@@ -9,14 +9,13 @@ export const PSYCHOLOGIST = {
   // Formato internacional sem espaços/símbolos. (22) 98111-4695
   whatsappNumber: "5522981114695",
   // SUBSTITUA pelo e-mail real que vai receber os contatos do formulário
-  email: "contato@gabrielribeiropsi.com.br",
+  email: "gabriel@grpsicologia.com",
   photoUrl: "/img-gabriel.jpeg" as string | null,
 };
 
-// Destino inicial dos e-mails do formulário de contato, enquanto a conta
-// Resend/e-mail definitivo do Gabriel não é configurado (via env var
-// CONTACT_EMAIL em produção). SUBSTITUA quando o Gabriel assumir o projeto.
-export const INITIAL_CONTACT_EMAIL = "munizzleonardo@gmail.com";
+// Destino dos e-mails do formulário de contato (pode ser sobrescrito pela
+// env var CONTACT_EMAIL em produção).
+export const INITIAL_CONTACT_EMAIL = PSYCHOLOGIST.email;
 
 export type CityInfo = {
   slug: string;
@@ -26,19 +25,7 @@ export type CityInfo = {
   intro: string;
 };
 
-export const CITIES: Record<"caboFrio" | "saoPedroDaAldeia", CityInfo> = {
-  caboFrio: {
-    slug: "psicologo-cabo-frio",
-    name: "Cabo Frio",
-    state: "RJ",
-    heroImage: {
-      src: "https://images.unsplash.com/photo-1640890092058-eb23282e0039?w=1600&q=80&auto=format&fit=crop",
-      alt: "Barco na areia da Praia das Dunas, em Cabo Frio",
-      credit: "Foto: Wesley Caribe / Unsplash",
-    },
-    intro:
-      "Atendimento presencial em Cabo Frio para quem busca um espaço de escuta próximo de casa, com a flexibilidade de também poder continuar as sessões online quando precisar.",
-  },
+export const CITIES: Record<"saoPedroDaAldeia", CityInfo> = {
   saoPedroDaAldeia: {
     slug: "psicologo-sao-pedro-da-aldeia",
     name: "São Pedro da Aldeia",
