@@ -18,7 +18,7 @@ export function PresencialSection() {
             description="Presencialmente na Região dos Lagos, e online em qualquer lugar do Brasil."
           />
 
-          <AnimatedGroup className="mt-8 grid gap-5 sm:grid-cols-3">
+          <AnimatedGroup className="mt-8 grid gap-5 sm:grid-cols-2">
             {cities.map((city) => (
               <Link
                 key={city.slug}

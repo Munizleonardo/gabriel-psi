@@ -37,7 +37,7 @@ export default function Image() {
         </div>
         <div style={{ display: "flex", fontSize: 56 }}>{PSYCHOLOGIST.fullTitle}</div>
         <div style={{ display: "flex", fontSize: 28, color: "#586448" }}>
-          CRP {PSYCHOLOGIST.crp} · Atendimento online e em Cabo Frio / São Pedro da Aldeia
+          CRP {PSYCHOLOGIST.crp} · Atendimento online e em São Pedro da Aldeia
         </div>
       </div>
     ),

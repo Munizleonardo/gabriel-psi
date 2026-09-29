@@ -1,6 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Atendimento presencial em Cabo Frio suspenso por enquanto.
+  async redirects() {
+    return [
+      {
+        source: "/psicologo-cabo-frio",
+        destination: "/psicologo-sao-pedro-da-aldeia",
+        permanent: false,
+      },
+    ];
+  },
   images: {
     remotePatterns: [
       {

@@ -7,11 +7,11 @@ describe("buildMetadata", () => {
     const metadata = buildMetadata({
       title: "Título de teste",
       description: "Descrição de teste",
-      path: "/psicologo-cabo-frio",
+      path: "/psicologo-sao-pedro-da-aldeia",
     });
 
-    expect(metadata.alternates?.canonical).toBe(`${SITE_URL}/psicologo-cabo-frio`);
+    expect(metadata.alternates?.canonical).toBe(`${SITE_URL}/psicologo-sao-pedro-da-aldeia`);
     expect(metadata.openGraph?.title).toBe("Título de teste");
-    expect(metadata.openGraph?.url).toBe(`${SITE_URL}/psicologo-cabo-frio`);
+    expect(metadata.openGraph?.url).toBe(`${SITE_URL}/psicologo-sao-pedro-da-aldeia`);
   });
 });
