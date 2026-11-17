@@ -11,7 +11,7 @@ const NAV = [
   { href: "/#terapia", label: "Como é a terapia" },
   { href: "/#sobre", label: "Quem sou eu" },
   { href: "/#servicos", label: "Com o que eu trabalho" },
-  { href: "/#abordagem", label: "Abordagem" },
+  { href: "/#sobre", label: "Abordagem" },
   { href: "/#como-funciona", label: "Passo a passo" },
   { href: "/#faq", label: "Perguntas frequentes" },
   { href: "/#contato", label: "Contato" },
